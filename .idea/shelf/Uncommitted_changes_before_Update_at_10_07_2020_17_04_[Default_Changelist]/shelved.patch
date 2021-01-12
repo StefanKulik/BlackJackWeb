@@ -1,0 +1,40 @@
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/modules.xml	(date 1594393285623)
++++ .idea/modules.xml	(date 1594393285623)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/BlackJackWeb.iml" filepath="$PROJECT_DIR$/.idea/BlackJackWeb.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: BlackJack/Web/libs/jdk/bin/debug.log
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- BlackJack/Web/libs/jdk/bin/debug.log	(revision 90f244747681c03c6eca0d8fafe827257671b1bd)
++++ BlackJack/Web/libs/jdk/bin/debug.log	(date 1594393285468)
+@@ -16456,6 +16456,15 @@
+ [0702/160502.569:INFO:CONSOLE(9064)] "You are running Vue in development mode.
+ Make sure to turn on production mode when deploying for production.
+ See more tips at https://vuejs.org/guide/deployment.html", source: https://unpkg.com/vue@2.6.11/dist/vue.js (9064)
++[0702/163946.892:WARNING:angle_platform_impl.cc(59)] compileToBinary(235): 
++C:\fakepath(35,8-58): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
++C:\fakepath(43,8-28): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
++
++[0702/163947.224:INFO:CONSOLE(9055)] "Download the Vue Devtools extension for a better development experience:
++https://github.com/vuejs/vue-devtools", source: https://unpkg.com/vue@2.6.11/dist/vue.js (9055)
++[0702/163947.224:INFO:CONSOLE(9064)] "You are running Vue in development mode.
++Make sure to turn on production mode when deploying for production.
++See more tips at https://vuejs.org/guide/deployment.html", source: https://unpkg.com/vue@2.6.11/dist/vue.js (9064)
+ [0703/085552.274:INFO:CONSOLE(9055)] "Download the Vue Devtools extension for a better development experience:
+ https://github.com/vuejs/vue-devtools", source: https://unpkg.com/vue@2.6.11/dist/vue.js (9055)
+ [0703/085552.275:INFO:CONSOLE(9064)] "You are running Vue in development mode.

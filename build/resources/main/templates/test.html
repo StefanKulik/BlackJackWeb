@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BlackJack</title>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/vue.min.js"></script>
+    <script src="assets/js/vuex.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style-bj.css">
+
+</head>
+<body class="col" th:classappend="${isLightTheme} ? light">
+<header class="row">
+    <div class="offset-md-3 col-md-2" id="headline" style="color: #555555"></div>
+
+    <div class="offset-md-2 col-md-2" id="message">
+        <h1 style="margin-top: 38px">{{message}}</h1>
+    </div>
+</header>
+
+<menu id="but" class="row">
+    <a  class="but" href="home">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+        <div class="bar4"></div>
+        <div class="bar5"></div>
+    </a>
+<!--    <button  class="but" onclick="menuOpen(); menuIcon()">-->
+<!--        <div class="bar1"></div>-->
+<!--        <div class="bar2"></div>-->
+<!--        <div class="bar3"></div>-->
+<!--        <div class="bar4"></div>-->
+<!--        <div class="bar5"></div>-->
+<!--    </button>-->
+<!--    <div id="menu-bar" class=" menu-bar">-->
+<!--        <li class="col-md-1"><a href="blackjack">BlackJack</a></li>-->
+<!--        <li class="col-md-1"><a href="test">test</a></li>-->
+<!--        <li class="col-md-1"><a href="home">home</a></li>-->
+<!--        &lt;!&ndash;            <li class="col-md-1"><a href="blackjack">s</a></li>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <li class="col-md-1"><a href="blackjack">s</a></li>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <li class="col-md-1"><a href="blackjack">s</a></li>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <li class="col-md-1"><a href="blackjack">s</a></li>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <li class="col-md-1"><a href="blackjack">s</a></li>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <li class="col-md-1"><a href="blackjack">s</a></li>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <li class="col-md-1"><a href="blackjack">s</a></li>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <li class="col-md-1"><a href="blackjack">s</a></li>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <li class="col-md-1"><a href="blackjack">s</a></li>&ndash;&gt;-->
+<!--    </div>-->
+</menu>
+
+<main id="spielfeld" class="row" >
+
+</main>
+
+<footer id="test" class="row" style="user-select: None;">
+
+<!--    <label  class="col-md-1 switch">-->
+<!--        <input type="checkbox" checked id="switch" onclick="setClassToBody()">-->
+<!--        <span class="slider round"></span>-->
+<!--    </label>-->
+<!--    <label for="switch" id="label">Dark</label>-->
+
+
+        <label  class="col-md-1 switch">
+            <span id="symbol" style="color:var(--color-one);" class="icon_fa" >&#xf186;</span>
+            <input type="checkbox" checked id="switch" onclick="setClassToBody()" >
+        </label>
+        <label for="switch" id="label" class="col-md-1">Dark</label>
+</footer>
+
+
+<script src="assets/js/darkmode.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>

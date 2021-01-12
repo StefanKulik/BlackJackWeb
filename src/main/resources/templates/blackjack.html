@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>BlackJack</title>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/vue.min.js"></script>
+    <script src="assets/js/vuex.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style-bj.css">
+
+</head>
+<body class="" th:classappend="${isLightTheme} ? light">
+<div id="body">
+    <header class="row">
+        <div class="offset-6 col-2" id="message">
+            <h1>{{message}}</h1>
+        </div>
+
+        <div class="col-4 result" id="lastGame">
+            <h3>Last Games: </h3><h3 v-for="game in lastGame">&nbsp;{{game}},</h3>
+        </div>
+    </header>
+
+    <menu id="but" class="row">
+        <a  class="but" href="home">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <div class="bar4"></div>
+            <div class="bar5"></div>
+        </a>
+    </menu>
+
+    <main id="spielfeld" class="row" >
+
+        <div id="spielflaeche" class="col-10 spielflaeche" >
+            <div class="row 1" v-if="!ende">
+                <div id="spielerWert" class="offset-1 col-3 all">
+                    <div class="box-style" style="text-align: center">
+                        <div style="font-size: 35px">Spieler Wert:</div>
+                        <h1 style="font-size: 150px">{{wertSpieler}}</h1>
+                    </div>
+                </div>
+
+
+                <div id="spielerAuflistung" class="col-4 all">
+                    <div class="box-style">
+                        <table class="table table-hover">
+                            <tr>
+                                <th style="text-decoration: underline; text-decoration-style: solid; font-size: 30px">Karten Spieler</th>
+                            </tr>
+                            <tr >
+                                <td style="display:flex">
+
+                                    <div class="karteSpieler" v-for="karte in kartenSpieler" style="margin-right: 15px;">{{karte}}</div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row 2" v-if="!ende">
+                <div id="anzeige" class="offset-9 col-3 all">
+                    <div class="box-style" style="display:flex">
+                        <h1 style="font-size: 58px">{{ergebnis}}</h1>
+                    </div>
+                </div>
+
+<!--                <div id="anzahlCredits" class="col-md-2 all" >-->
+<!--                    <div class="box-style" style="display:flex">-->
+<!--                        <h1 style="font-size: 30px">#credits</h1>-->
+<!--                    </div>-->
+<!--                </div>-->
+            </div>
+
+            <div class="row 3" v-if="!ende">
+                <div id="croupierWert" class="offset-1 col-3 all">
+                    <div class="box-style" style="text-align: center">
+                        <div style="font-size: 35px">Dealer Wert:</div>
+                        <h1 style="font-size: 150px">{{wertDealer}}</h1>
+                    </div>
+                </div>
+
+                <div id="croupierAuflistung" class="col-3 all">
+                    <div class="box-style">
+                        <table class="table table-hover">
+                            <tr>
+                                <th style="text-decoration: underline; text-decoration-style: solid; font-size: 30px">Karten Dealer</th>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 30px; display: flex" >
+                                    <div class="karteDealer" v-for="karte in kartenDealer" style="margin-right: 15px;">{{karte}}</div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="buttons" class="col-2 wrapper">
+            <div class="row 1">
+                <div id="stay" class="col wrapper__inner">
+                    <button class="button" @click="stay" v-if="displ" v-on:click="displ = false">
+                        STAY
+                    </button>
+                </div>
+            </div>
+            <div class="row 2">
+                <div id="hit" class="col wrapper__inner" v-if="displ">
+                    <button class="button" @click="hit">
+                        HIT
+                    </button>
+                </div>
+            </div>
+
+            <div class="row 3" id="einsatz"> </div>
+
+            <div class="row 4">
+                <div id="neueRunde" class="col wrapper__inner">
+                    <button class="button" @click="neueRunde" v-if="!ende" v-on:click="displ = true">
+                        NEW ROUND
+                    </button>
+                </div>
+            </div>
+            <div class="row 5">
+
+                <div id="end" class="col wrapper__inner">
+                    <button class="button" @click="end" v-if="!ende" v-on:click="ende = true, displ = false">
+                        END
+                    </button>
+                    <button class="button" v-if="ende" v-on:click="ende = false">
+                        START
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="row" style="user-select: None;">
+
+        <label>
+            <span class="icon_fa" id="symbol" style="color:var(--color-one);" >&#xf186;</span>
+            <input checked id="switch" onclick="setClassToBody()" type="checkbox" >
+        </label>
+        <label class="" for="switch" id="label"></label>
+
+    </footer>
+
+
+<script src="assets/js/darkmode.js"></script>
+<script src="assets/js/script.js"></script>
+</div>
+</body>
+</html>

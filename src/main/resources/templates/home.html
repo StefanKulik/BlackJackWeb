@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+
+        <title>BlackJack</title>
+
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/vue.min.js"></script>
+        <script src="assets/js/vuex.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+        <script src="https://unpkg.com/vue"></script>
+
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/style-home.css" rel="stylesheet">
+
+    </head>
+    <body class="" th:classappend="${isLightTheme} ? light">
+    <div id="body">
+
+        <header class="row">
+            <div class="offset-6 col-2" id="message">
+                <h1>{{message}}</h1>
+            </div>
+        </header>
+
+        <main class="row" id="spielfeld">
+            <div class="col-6 box__style box__style__1">
+                <button class="box__style__home"><a class="box__style__home__but" href="blackjack">BlackJack</a></button>
+            </div>
+            <div class="col-6 box__style box__style__2">
+                <button class="box__style__home"><a class="box__style__home__but" href="test">Test</a></button>
+            </div>
+        </main>
+
+        <footer class="row" style="user-select: None;">
+
+            <label>
+                <span class="icon_fa" id="symbol" style="color:var(--color-one);" >&#xf186;</span>
+                <input checked id="switch" onclick="setClassToBody()" type="checkbox" >
+            </label>
+            <label class="" for="switch" id="label"></label>
+
+        </footer>
+
+
+        <script src="assets/js/darkmode.js"></script>
+        <script src="assets/js/script.js"></script>
+
+    </div>
+    </body>
+</html>

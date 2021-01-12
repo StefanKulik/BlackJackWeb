@@ -1,0 +1,252 @@
+:root {
+    --main-bg-color: #121212;
+    --color-one: #123456;
+    --color-two: #121212;
+    --color-karte: #ffffff;
+}
+/*rgba(255,255,255,0.02)*/
+.light {
+    --main-bg-color: #ffffff;
+    --color-one: #adadad;
+    --color-two: #ffffff;
+    --color-karte: #121212;
+}
+/*rgba(0, 0, 0, 0.02)*/
+
+/*---  ALLGEMEIN  ----------------------*/
+@font-face {
+    font-family: 'FontAwesome';
+    font-style: normal;
+    font-weight: 900;
+    src: url("/assets/fonts/fontawesome-webfont.ttf") format("truetype");
+}
+body {
+    background-color: var(--main-bg-color);
+    color: var(--color-one);
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    /*font-family: 'Comic Sans MS', serif;*/
+}
+
+header {
+    border-top: 1px solid var(--color-one);
+    border-bottom: 1px solid var(--color-one);
+    height: 94px;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    align-content: center;
+    color: var(--color-one);
+}
+menu {
+    height:50px;
+    padding: 0;
+    margin: 0 10%;
+}
+footer {
+    background-color: var(--main-bg-color);
+    height: 55px;
+    margin: 0 10%;
+    border-top: 1px dotted var(--color-one);
+}
+/*--------------------------------------*/
+
+/*---  ID  -----------------------------*/
+#spielfeld, #anleitung, #anleitung table{
+    height:calc(100vh - 199px);
+}
+#anleitung.col-md-1{
+    padding: 0;
+}
+#spielflaeche .row {
+    height: calc((100vh - 199px)/4);
+}
+#buttons .row{
+    height: calc((100vh - 199px)/5);
+}
+#demo{
+    padding: 0;
+}
+#spielerAuflistung .box-style, #croupierAuflistung .box-style {
+    min-height: calc((100vh - 275px)/2);
+    box-shadow: 0 0 0 0;
+}
+#spielerAuflistung .table, #croupierAuflistung .table{
+    margin: 5px;
+    font-size: 15px;
+    max-height: calc((100vh - 275px)/2);
+}
+#spielerWert, #croupierWert, #demo {
+    max-height: calc((100vh - 199px)/4);
+}
+#einsatz{
+    padding-left: 11px;
+}
+#spielerAuflistung .table, #croupierAuflistung .table {
+    pointer-events: none;
+}
+#anzeige {
+    border: 1px solid var(--color-one);
+    border-radius: 10px;
+    height: 99px;
+    margin-top: 112px;
+    margin-left: 1312px;
+}
+/*--------------------------------------*/
+
+/*---  CLASS  --------------------------*/
+.table {
+    margin: 0;
+    color: var(--color-one);
+}
+.table td, .table th {
+    border-top: none;
+}
+.all{
+    display: flex;
+    justify-content: space-around;
+}
+.box-style {
+    display: left;
+    justify-content: space-around;
+    background-color: var(--color-two);
+    margin: 10px;
+    width: 100%;
+    border-radius: 10px;
+    /*box-shadow: 5px 5px 10px 5px #dcdcdc;*/
+}
+
+.karteSpieler {
+    background-color: var(--color-one);
+    width: 107px;
+    height:150px;
+    border-radius: 15px;
+    font-size: 81px;
+    text-align: center;
+    color: var(--color-two);
+}
+.karteDealer {
+    background-color: var(--color-one);
+    width: 86px;
+    height:120px;
+    border-radius: 15px;
+    font-size: 65px;
+    text-align: center;
+    color: var(--color-two);
+}
+/*--------------------------------------*/
+
+/*---  MENU  ---------------------------*/
+menu .but {
+    float: left;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    height: 50px;
+    border:none;
+    width: 156px;
+    padding-top: 6px;
+    cursor: pointer;
+    font-size: 50px;
+    color: #ADADAD;
+    display: inline-block;
+}
+menu .but .col-md-1 {
+    padding: 0;
+    margin: 0;
+}
+.bar1, .bar2, .bar3 {
+    width: 32px;
+    height: 5px;
+    background-color: var(--color-one);
+    margin: 6px 56px;
+    text-align: center;
+}.bar4, .bar5{
+     opacity: 1;
+     width: 15px;
+     height: 5px;
+     background-color: var(--color-one);
+     margin: 6px 56px;
+     text-align: center;
+ }
+.bar4 {
+    transform: rotate(90deg) translate(-28px, -30px);
+}
+.bar5 {
+    transform: rotate(90deg) translate(-27px, -30px);
+}
+.but:hover .bar2 {
+    width: 25px;
+}
+
+.but:hover .bar4, .but:hover .bar5 {
+    opacity: 1;
+    width: 14px;
+    height: 5px;
+    background-color: var(--color-one);
+    margin: 6px 56px;
+    text-align: center;
+}
+.but:hover .bar4 {
+    transform: rotate(45deg) translate(6px, -33px);
+}
+.but:hover .bar5 {
+    transform: rotate(-45deg) translate(46px, -7px);
+}
+/*--------------------------------------*/
+
+
+/*---  BUTTON DESIGN  ------------------*/
+#einsatz .button {
+    height: 50px;
+    min-width: 50px;
+}
+.button {
+    height: 80px;
+    width: 120px;
+    color: var(--color-one);
+    display: flex;
+    margin: 10px;
+    justify-content: space-around;
+    text-align: center;
+    background-color: var(--main-bg-color);
+    border: 1px solid var(--color-one);
+}
+.button:hover {
+    background-color: var(--color-two);
+}
+/*--------------------------------------*/
+
+/*Switch*/
+.switch {
+    margin-top: 5px;
+    margin-left: 5px;
+    position: relative;
+    display: inline-block;
+    max-width: 60px;
+    height: 34px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+#label{
+    font-size: 30px;
+    padding-left: 5px;
+}
+.icon_fa{
+    font-family:FontAwesome;
+    padding-left: 5px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #f09020;
+}
+.icon_fa:hover{
+    opacity: 0.5;
+}
+
