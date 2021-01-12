@@ -168,9 +168,9 @@ public class BlackJackRest {
     }
     @PostMapping("result")
     public String result(){
-        if(lastFiveGames.size() < 5) {
+        if(lastFiveGames.size() < 6) {
             lastFiveGames.add(Application.spiel.determineWinner());
-        }else if(lastFiveGames.size() == 5) {
+        }else if(lastFiveGames.size() == 6) {
             lastFiveGames.remove(0);
             lastFiveGames.add(Application.spiel.determineWinner());
         }

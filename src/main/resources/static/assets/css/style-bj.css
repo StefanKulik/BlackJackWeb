@@ -132,10 +132,9 @@ menu .but .bar5 {
 
 main {
   height: calc(100vh - 191px);
-  background-color: pink;
 }
 main .spielflaeche {
-  background-color: #0f6674;
+  background-color: #0f6473;
 }
 main .spielflaeche .row {
   height: calc((100vh - 191px)/3);

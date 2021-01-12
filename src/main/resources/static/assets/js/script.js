@@ -30,7 +30,7 @@ var app = new Vue({
         ergebnis: "",
         lastGame: "",
         index: 2,
-        games: null,
+        games: 0,
         message: new Date().toLocaleDateString(),
     },
     methods: {
@@ -166,8 +166,6 @@ var app = new Vue({
                     app.wertDealer = null;
                     app.dealerAnfangsKarten();
 
-
-                    app.letzen5Spiele();
                     app.ergebnis = "";
 
                     app.index = 2;
@@ -180,6 +178,9 @@ var app = new Vue({
                 type: "Post",
                 url: "/stay/",
                 success: function () {
+                    if(app.games>1){
+                        app.letzen5Spiele();
+                    }
                     app.dealerKarten();
                 }
             });
