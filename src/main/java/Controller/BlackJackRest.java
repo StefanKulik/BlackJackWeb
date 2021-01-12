@@ -1,12 +1,10 @@
-package webController;
+package Controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import webBlackJack.Application;
-import webBlackJack.Config;
-
+import BlackJack.Application;
+import BlackJack.Config;
 
 import java.util.ArrayList;
 
@@ -20,6 +18,8 @@ public class BlackJackRest {
     int i;
     int numberPlayer;
     int index = 2;
+
+
 
     @PostMapping("/setTheme")
     public String setTheme(@RequestParam(name = "theme") String theme) {

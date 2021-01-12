@@ -1,12 +1,13 @@
-package webController;
+package Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import webBlackJack.Config;
+import BlackJack.Config;
 
 @Controller
 public class BlackJack {
+
 
     @GetMapping("/home")
     public String home(Model model) {
@@ -42,5 +43,8 @@ public class BlackJack {
 
         return "test.html";
     }
+
+
+
 
 }

@@ -1,4 +1,4 @@
-package gameLogic;
+package BlackJack.gameLogic;
 
 import javax.swing.*;
 import java.awt.*;

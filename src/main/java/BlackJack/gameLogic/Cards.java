@@ -1,4 +1,4 @@
-package gameLogic;
+package BlackJack.gameLogic;
 
 public class Cards {
     private String picture;

@@ -1,4 +1,7 @@
 buildscript {
+    ext {
+        springBootVersion = '2.1.1.RELEASE'
+    }
     repositories {
         mavenCentral()
     }
@@ -17,7 +20,7 @@ apply plugin: 'io.spring.dependency-management'
 
 
 group = 'privat'
-version = '0.2'
+version = '0.5'
 sourceCompatibility = '11'
 
 repositories {
@@ -44,10 +47,15 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
-    runtimeOnly 'com.h2database:h2'
+    implementation 'org.postgresql:postgresql'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
+
+
+
+    compile group: 'io.projectreactor', name: 'reactor-core', version: '3.4.0'
+    testCompile group: 'io.projectreactor', name: 'reactor-test', version: '3.4.0'
 }
 
 mainClassName = 'webBlackJack.Main'

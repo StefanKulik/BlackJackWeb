@@ -1,7 +1,7 @@
 package spielLogikTest;
 
 import org.junit.Test;
-import gameLogic.SpielerKonto;
+import BlackJack.gameLogic.SpielerKonto;
 
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertThrows;

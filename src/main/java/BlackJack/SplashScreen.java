@@ -1,4 +1,4 @@
-package webBlackJack;
+package BlackJack;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -58,9 +58,9 @@ class SplashScreen extends JWindow {
                 "spring framework is starting ...",
                 "starting tomcat ...",
                 "webserver is running ...",
-//                "database is starting ... ",
-//                "connecting to database ...",
-//                "database connection is established ...",
+//                "Test.database is starting ... ",
+//                "connecting to Test.database ...",
+//                "Test.database connection is established ...",
                 "create main window ...",
                 "show main window ...",
                 "ready!",

@@ -1,5 +1,6 @@
-package webBlackJack;
+package BlackJack;
 
+import BlackJack.gameLogic.Game;
 import org.cef.CefApp;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -7,15 +8,15 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import gameLogic.Game;
+
 
 import java.lang.reflect.Field;
 
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"webController"})
-@EnableJpaRepositories(basePackages = "database.repositories")
-@EntityScan(basePackages = {"database.tables"})
+@ComponentScan(basePackages = {"Controller"})
+@EnableJpaRepositories(basePackages = "Test.database.repositories")
+@EntityScan(basePackages = {"Test.database.tables"})
 public class Application {
 
     public static Game spiel;

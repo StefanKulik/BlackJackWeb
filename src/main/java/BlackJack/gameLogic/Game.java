@@ -1,4 +1,4 @@
-package gameLogic;
+package BlackJack.gameLogic;
 
 import java.util.ArrayList;
 

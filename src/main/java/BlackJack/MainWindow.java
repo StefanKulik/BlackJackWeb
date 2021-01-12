@@ -1,4 +1,4 @@
-package webBlackJack;
+package BlackJack;
 
 import org.cef.CefApp;
 import org.cef.CefApp.CefAppState;
@@ -12,7 +12,7 @@ import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-import static webBlackJack.Main.pathTemp;
+import static BlackJack.Main.pathTemp;
 
 class MainWindow extends JFrame {
 

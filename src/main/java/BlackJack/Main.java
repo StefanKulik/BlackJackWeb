@@ -1,4 +1,4 @@
-package webBlackJack;
+package BlackJack;
 
 
 public class Main {

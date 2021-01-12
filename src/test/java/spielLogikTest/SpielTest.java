@@ -1,8 +1,8 @@
 package spielLogikTest;
 
 import org.junit.Test;
-import gameLogic.Cards;
-import gameLogic.Game;
+import BlackJack.gameLogic.Cards;
+import BlackJack.gameLogic.Game;
 
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.*;
