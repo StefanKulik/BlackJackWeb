@@ -58,20 +58,8 @@ dependencies {
     testCompile group: 'io.projectreactor', name: 'reactor-test', version: '3.4.0'
 }
 
-mainClassName = 'webBlackJack.Main'
-
-task fatJar(type: Jar) {
-    manifest {
-        attributes 'Implementation-Title': 'BlackJack',
-                'Implementation-Version': version,
-                'Main-Class': 'spielLogik.Startklasse'
-    }
-    baseName = project.name + '-console'
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-    with jar
-}
-
+mainClassName = 'BlackJack.Main'
 
 bootJar {
-    baseName = project.name + "-web"
+    project.name + "-web"
 }

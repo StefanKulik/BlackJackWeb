@@ -7,19 +7,19 @@ function menuIcon(){
 
 
 
-/*<![CDATA[*/
-var app3 = new Vue({
-    el: '#message',
-    data: {
-        message: new Date().toLocaleDateString(),
-    }
-});
-/*]]>*/
+// /*<![CDATA[*/
+// var app3 = new Vue({
+//     el: '#message',
+//     data: {
+//         message: new Date().toLocaleDateString(),
+//     }
+// });
+// /*]]>*/
 
 
 /*<![CDATA[*/
 var app = new Vue({
-    el: '#spielfeld',
+    el: '#body',
     data: {
         ende: true,
         displ: false,
@@ -28,7 +28,10 @@ var app = new Vue({
         wertSpieler: null,
         wertDealer: null,
         ergebnis: "",
+        lastGame: "",
         index: 2,
+        games: 0,
+        message: new Date().toLocaleDateString(),
     },
     methods: {
         hit: function () {
@@ -48,7 +51,7 @@ var app = new Vue({
         spielerWert: function() {
             $.ajax({
                 type: "Post",
-                url: "/spielerWert/",
+                url: "/playerValue/",
                 success: function (data) {
                     app.wertSpieler = [];
                     app.wertSpieler = data;
@@ -63,7 +66,7 @@ var app = new Vue({
             $.ajax({
                 type: "Post",
                 contentType: "application/json",
-                url: "/spielerKarten/",
+                url: "/playerCards/",
                 data: null,
                 dataType: 'json',
                 success: function (data) {
@@ -79,7 +82,7 @@ var app = new Vue({
             $.ajax({
                 type: "Post",
                 contentType: "application/json",
-                url: "/dealerAnfangsKarten/",
+                url: "/dealerStartCard/",
                 data: null,
                 dataType: 'json',
                 success: function (data) {
@@ -124,7 +127,7 @@ var app = new Vue({
             $.ajax({
                 type: "Post",
                 contentType: "application/json",
-                url: "/dealerKarten/",
+                url: "/dealerCards/",
                 data: null,
                 dataType: 'json',
                 success: function (data) {
@@ -140,7 +143,7 @@ var app = new Vue({
         dealerWert: function(){
             $.ajax({
                 type: "Post",
-                url: "/dealerWert/",
+                url: "/dealerValue/",
                 success: function (data) {
                     app.wertDealer = [];
                     app.wertDealer = data;
@@ -153,7 +156,7 @@ var app = new Vue({
         neueRunde: function(){
             $.ajax({
                 type: "Post",
-                url: "/neueRunde/",
+                url: "/newRound/",
                 success: function () {
                     app.kartenSpieler = [];
                     app.wertSpieler = null;
@@ -166,6 +169,7 @@ var app = new Vue({
                     app.ergebnis = "";
 
                     app.index = 2;
+                    app.games++;
                 }
             });
         },
@@ -174,6 +178,9 @@ var app = new Vue({
                 type: "Post",
                 url: "/stay/",
                 success: function () {
+                    if(app.games>1){
+                        app.letzen5Spiele();
+                    }
                     app.dealerKarten();
                 }
             });
@@ -188,6 +195,7 @@ var app = new Vue({
                     app.wertSpieler = null;
                     app.wertDealer = null;
                     app.ergebnis = "";
+                    app.lastGame = [];
                 }
             });
         },
@@ -195,11 +203,44 @@ var app = new Vue({
             $.ajax({
                 type: "Post",
                 contentType: "application/json",
-                url: "/ergebnis/",
+                url: "/result/",
                 data: null,
                 dataType: 'json',
                 success: function (data) {
                     app.ergebnis = data;
+                }
+            });
+        },
+        letzen5Spiele: function(){
+            $.ajax({
+                type: "Post",
+                contentType: "application/json",
+                url: "/lastGames/",
+                data: null,
+                dataType: 'json',
+                success: function (data) {
+                    app.lastGame = []
+                    if(app.games === 1) {
+                        app.lastGame.push(data[0]);
+                    }else if(app.games === 2){
+                        app.lastGame.push(data[0]);
+                        app.lastGame.push(data[1]);
+                    }else if(app.games === 3){
+                        app.lastGame.push(data[0]);
+                        app.lastGame.push(data[1]);
+                        app.lastGame.push(data[2]);
+                    }else if(app.games === 4){
+                        app.lastGame.push(data[0]);
+                        app.lastGame.push(data[1]);
+                        app.lastGame.push(data[2]);
+                        app.lastGame.push(data[3]);
+                    }else{
+                        app.lastGame.push(data[0]);
+                        app.lastGame.push(data[1]);
+                        app.lastGame.push(data[2]);
+                        app.lastGame.push(data[3]);
+                        app.lastGame.push(data[4]);
+                    }
                 }
             });
         },

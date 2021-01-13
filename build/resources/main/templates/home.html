@@ -1,55 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
 
-    <title>BlackJack</title>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/vue.min.js"></script>
-    <script src="assets/js/vuex.js"></script>
-    <script src="assets/js/bootstrap.js"></script>
-    <script src="https://unpkg.com/vue"></script>
+        <title>BlackJack</title>
 
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style-home.css">
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/vue.min.js"></script>
+        <script src="assets/js/vuex.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+        <script src="https://unpkg.com/vue"></script>
+
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/style-home.css" rel="stylesheet">
+
+    </head>
+    <body class="" th:classappend="${isLightTheme} ? light">
+    <div id="body">
+
+        <header class="row">
+            <div class="offset-6 col-2" id="message">
+                <h1>{{message}}</h1>
+            </div>
+        </header>
+
+        <main class="row" id="spielfeld">
+            <div class="col-6 box__style box__style__1">
+                <button class="box__style__home"><a class="box__style__home__but" href="blackjack">BlackJack</a></button>
+            </div>
+            <div class="col-6 box__style box__style__2">
+                <button class="box__style__home"><a class="box__style__home__but" href="test">Test</a></button>
+            </div>
+        </main>
+
+        <footer class="row" style="user-select: None;">
+
+            <label>
+                <span class="icon_fa" id="symbol" style="color:var(--color-one);" >&#xf186;</span>
+                <input checked id="switch" onclick="setClassToBody()" type="checkbox" >
+            </label>
+            <label class="" for="switch" id="label"></label>
+
+        </footer>
 
 
-</head>
-<body class="col" th:classappend="${isLightTheme} ? light">
-<header class="row">
-    <div class="offset-md-3 col-md-2" id="headline" style="color: #555555"></div>
+        <script src="assets/js/darkmode.js"></script>
+        <script src="assets/js/script.js"></script>
 
-    <div class="offset-md-2 col-md-2" id="message">
-        <h1 style="margin-top: 38px">{{message}}</h1>
     </div>
-</header>
-
-<menu id="but" class="row menu-home"></menu>
-
-<main id="spielfeld" class="row" >
-    <div class="offset-md-3 col-md-2 home">
-        <button class="box-style-home"><a class="homebut" href="blackjack">Blackjack</a></button>
-    </div>
-    <div class="offset-2 col-md-2 home">
-        <button class="box-style-home"><a class="homebut" href="test">Test</a></button>
-    </div>
-
-</main>
-
-<footer class="row" style="user-select: None;">
-
-    <label  class="col-md-1 switch">
-        <span id="symbol" style="color:var(--color-one);" class="icon_fa" >&#xf186;</span>
-        <input type="checkbox" checked id="switch" onclick="setClassToBody()" >
-    </label>
-    <label for="switch" id="label" class="col-md-1">Dark</label>
-
-</footer>
-
-
-<script src="assets/js/darkmode.js"></script>
-<script src="assets/js/script.js"></script>
-</body>
+    </body>
 </html>

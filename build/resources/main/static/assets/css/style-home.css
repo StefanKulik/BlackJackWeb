@@ -1,114 +1,118 @@
 :root {
-    --main-bg-color: #121212;
-    --color-one: #123456;
-    --color-two: rgba(255,255,255,0.02);
+  --main-bg-color: #121212;
+  --color-one: #123456;
+  --color-two: rgba(255,255,255,0.02);
+  --color-three: rgba(255,255,255, 0.1);
 }
+
 .light {
-    --main-bg-color: #ffffff;
-    --color-one: #ADADAD;
-    --color-two: rgba(0, 0, 0, 0.02);
+  --main-bg-color: #ffffff;
+  --color-one: #ADADAD;
+  --color-two: rgba(0, 0, 0, 0.02);
+  --color-three: rgba(0, 0, 0, 0.1);
 }
 
-/*---  ALLGEMEIN  ----------------------*/
 @font-face {
-    font-family: 'FontAwesome';
-    font-style: normal;
-    font-weight: 900;
-    src: url("/assets/fonts/fontawesome-webfont.ttf") format("truetype");
+  font-family: "FontAwesome";
+  font-style: normal;
+  font-weight: 900;
+  src: url("/assets/fonts/fontawesome-webfont.ttf") format("truetype");
 }
-
 body {
-    background-color: var(--main-bg-color);
-    color: var(--color-one);
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    /*font-family: 'Comic Sans MS', serif;*/
+  background-color: var(--main-bg-color);
+  color: var(--color-one);
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  font-family: "Comic Sans MS", serif;
+}
+body .row {
+  padding: 0;
+  margin: 0;
 }
 
 header {
-    border-top: 1px solid var(--color-one);
-    border-bottom: 1px solid var(--color-one);
-    height: 94px;
-    margin: 0;
-    position: relative;
-    overflow: hidden;
-    align-content: center;
-    color: var(--color-one);
+  border-bottom: 1px solid var(--color-one);
+  height: 90px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  color: var(--color-one);
 }
-menu {
-    height:50px;
-    padding: 0;
-    margin: 0 10%;
+header div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header div h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 35px;
+}
+
+main {
+  height: calc(100vh - 141px);
+}
+main .box__style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 0;
+  padding: 0;
+}
+main .box__style__home {
+  background-color: var(--color-two);
+  border: none;
+  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+}
+main .box__style__home:hover {
+  background-color: var(--color-three);
+}
+main .box__style__home__but {
+  text-decoration: none;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  color: var(--color-one);
 }
 footer {
-    background-color: var(--main-bg-color);
-    height: 55px;
-    margin: 0 10%;
-    border-top: 1px dotted var(--color-one);
+  background-color: var(--main-bg-color);
+  height: 50px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-top: 1px dotted var(--color-one);
+}
+footer label {
+  font-size: 30px;
+  padding-left: 5px;
+  margin: 0;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer label .icon_fa {
+  font-family: FontAwesome;
+  font-size: 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f09020;
+}
+footer label input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-#spielfeld {
-    height:calc(100vh - 199px);
-}
-/*--------------------------------------*/
-
-/*---  CLASS  --------------------------*/
-.home {
-    border:none;
-    margin-top: 125px;
-    height: 200px;
-    display: flex;
-    justify-content: space-around;
-}
-.home:hover .box-style-home,.home:hover .homebut{
-    text-decoration: none;
-    color: var(--color-one);
-    transform: scale(1.5);
-}
-.box-style-home {
-    background-color: var(--color-two);
-    border: none;
-    border-radius: 10px;
-    /*box-shadow: 0 0 10px 10px rgba(255,255,255,0.1);*/
-}
-.homebut {
-    text-decoration: none;
-    width: 290px;
-    height: 198px;
-    display: flex;
-    justify-content: center;
-    padding-top: 60px;
-    margin: 0;
-    font-size: 45px;
-    color: var(--color-one);
-}
-/*--------------------------------------*/
-/*Switch*/
-.switch {
-    margin-top: 5px;
-    margin-left: 5px;
-    position: relative;
-    display: inline-block;
-    max-width: 60px;
-    height: 34px;
-}
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-#label{
-    font-size: 30px;
-    padding-left: 5px;
-}
-.icon_fa{
-    font-family:FontAwesome;
-    padding-left: 5px;
-    font-size: 30px;
-    cursor: pointer;
-    color: #f09020;
-}
-.icon_fa:hover{
-    opacity: 0.5;
-}
+/*# sourceMappingURL=style-home.css.map */

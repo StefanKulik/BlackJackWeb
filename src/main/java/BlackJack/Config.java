@@ -11,7 +11,6 @@ import java.io.IOException;
 public class Config {
 
     private static Config INSTANCE = new Config();
-    private int threads = 1;
 
     // "private" verhindert die Erzeugung des Objektes über andere Methoden
     private Config() {
@@ -23,7 +22,7 @@ public class Config {
         return INSTANCE;
     }
 
-    private String configFilePath = Main.pathUser + "\\config.json";
+    private final String configFilePath = Main.pathUser + "\\config.json";
 
 //    private Locale language = Locale.getDefault();
 
