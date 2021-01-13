@@ -1,0 +1,380 @@
+:root {
+  --main-bg-color: #121212;
+  --color-one: #123456;
+  --color-two: rgba(255,255,255,0.02);
+  --color-three: rgba(255,255,255, 0.1);
+  --color-karte: #ffffff;
+}
+
+.light {
+  --main-bg-color: #ffffff;
+  --color-one: #ADADAD;
+  --color-two: rgba(0, 0, 0, 0.02);
+  --color-three: rgba(0, 0, 0, 0.1);
+}
+
+@font-face {
+  font-family: "FontAwesome";
+  font-style: normal;
+  font-weight: 900;
+  src: url("/assets/fonts/fontawesome-webfont.ttf") format("truetype");
+}
+.blackjack {
+  background-color: var(--main-bg-color);
+  color: var(--color-one);
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  font-family: "Comic Sans MS", serif;
+}
+.blackjack .row {
+  padding: 0;
+  margin: 0;
+}
+.blackjack header {
+  border-bottom: 1px solid var(--color-one);
+  height: 90px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  color: var(--color-one);
+}
+.blackjack header .result {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.blackjack header div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.blackjack header div h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 35px;
+}
+.blackjack menu {
+  height: 50px;
+  padding: 0;
+  margin: 0 10%;
+}
+.blackjack menu .but {
+  float: left;
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  height: 50px;
+  border: none;
+  width: 156px;
+  padding-top: 6px;
+  cursor: pointer;
+  font-size: 50px;
+  color: #ADADAD;
+  display: inline-block;
+}
+.blackjack menu .but .col-md-1 {
+  padding: 0;
+  margin: 0;
+}
+.blackjack menu .but:hover .bar2 {
+  width: 25px;
+}
+.blackjack menu .but:hover .bar4 {
+  opacity: 1;
+  width: 14px;
+  height: 5px;
+  background-color: var(--color-one);
+  margin: 6px 56px;
+  text-align: center;
+  transform: rotate(45deg) translate(6px, -33px);
+}
+.blackjack menu .but:hover .bar5 {
+  opacity: 1;
+  width: 14px;
+  height: 5px;
+  background-color: var(--color-one);
+  margin: 6px 56px;
+  text-align: center;
+  transform: rotate(-45deg) translate(46px, -7px);
+}
+.blackjack menu .but .bar1, .blackjack menu .but .bar2, .blackjack menu .but .bar3 {
+  width: 32px;
+  height: 5px;
+  background-color: var(--color-one);
+  margin: 6px 56px;
+  text-align: center;
+}
+.blackjack menu .but .bar4 {
+  opacity: 1;
+  width: 15px;
+  height: 5px;
+  background-color: var(--color-one);
+  margin: 6px 56px;
+  text-align: center;
+  transform: rotate(90deg) translate(-28px, -30px);
+}
+.blackjack menu .but .bar5 {
+  opacity: 1;
+  width: 15px;
+  height: 5px;
+  background-color: var(--color-one);
+  margin: 6px 56px;
+  text-align: center;
+  transform: rotate(90deg) translate(-27px, -30px);
+}
+.blackjack main {
+  height: calc(100vh - 191px);
+}
+.blackjack main .spielflaeche {
+  background-color: #0f6473;
+}
+.blackjack main .spielflaeche .row {
+  height: calc((100vh - 191px)/3);
+}
+.blackjack main #spielerAuflistung .box-style {
+  height: calc((100vh - 480px)/2);
+}
+.blackjack main #spielerAuflistung .table {
+  pointer-events: none;
+  margin: 5px;
+  font-size: 15px;
+  max-height: calc((100vh - 275px)/2);
+}
+.blackjack main #spielerAuflistung .karteSpieler {
+  background-color: var(--color-one);
+  width: 100px;
+  height: 140px;
+  border-radius: 15px;
+  font-size: 81px;
+  text-align: center;
+  color: var(--color-two);
+}
+.blackjack main #spielerWert {
+  max-height: calc((100vh - 191px)/3);
+}
+.blackjack main #croupierAuflistung .box-style {
+  height: calc((100vh - 480px)/2);
+}
+.blackjack main #croupierAuflistung .table {
+  pointer-events: none;
+  margin: 5px;
+  font-size: 15px;
+  max-height: calc((100vh - 275px)/2);
+}
+.blackjack main #croupierAuflistung .karteDealer {
+  background-color: var(--color-one);
+  width: 86px;
+  height: 120px;
+  border-radius: 15px;
+  font-size: 65px;
+  text-align: center;
+  color: var(--color-two);
+}
+.blackjack main #croupierWert {
+  max-height: calc((100vh - 199px)/4);
+}
+.blackjack main #anzeige {
+  border: 1px solid var(--color-one);
+  border-radius: 10px;
+  height: 99px;
+  margin-top: 112px;
+  margin-left: 1312px;
+}
+.blackjack main .table {
+  margin: 0;
+  color: var(--color-one);
+}
+.blackjack main .table td, .blackjack main .table th {
+  border-top: none;
+}
+.blackjack main .all {
+  display: flex;
+  justify-content: space-around;
+}
+.blackjack main .box-style {
+  background-color: var(--color-two);
+  margin: 10px;
+  width: 100%;
+  border-radius: 10px;
+}
+.blackjack main .wrapper {
+  padding: 0;
+  margin: 0;
+}
+.blackjack main .wrapper .row {
+  height: calc((100vh - 191px)/5);
+}
+.blackjack main .wrapper__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.blackjack main .wrapper__inner .button {
+  height: 80px;
+  width: 120px;
+  color: var(--main-bg-color);
+  display: flex;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  /* text-align: center; */
+  background-color: var(--color-one);
+  border: none;
+  border-radius: 5px;
+}
+.blackjack main .wrapper__inner .button:hover {
+  background-color: var(--color-three);
+}
+.blackjack footer {
+  background-color: var(--main-bg-color);
+  height: 50px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-top: 1px dotted var(--color-one);
+}
+.blackjack footer label {
+  font-size: 30px;
+  padding-left: 5px;
+  margin: 0;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.blackjack footer label .icon_fa {
+  font-family: FontAwesome;
+  font-size: 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f09020;
+}
+.blackjack footer label input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+:root {
+  --main-bg-color: #121212;
+  --color-one: #123456;
+  --color-two: rgba(255,255,255,0.02);
+  --color-three: rgba(255,255,255, 0.1);
+}
+
+.light {
+  --main-bg-color: #ffffff;
+  --color-one: #ADADAD;
+  --color-two: rgba(0, 0, 0, 0.02);
+  --color-three: rgba(0, 0, 0, 0.1);
+}
+
+@font-face {
+  font-family: "FontAwesome";
+  font-style: normal;
+  font-weight: 900;
+  src: url("/assets/fonts/fontawesome-webfont.ttf") format("truetype");
+}
+.home {
+  background-color: var(--main-bg-color);
+  color: var(--color-one);
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  font-family: "Comic Sans MS", serif;
+}
+.home .row {
+  padding: 0;
+  margin: 0;
+}
+.home header {
+  border-bottom: 1px solid var(--color-one);
+  height: 90px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  color: var(--color-one);
+}
+.home header div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home header div h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 35px;
+}
+.home main {
+  height: calc(100vh - 141px);
+}
+.home main .box__style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 0;
+  padding: 0;
+}
+.home main .box__style__home {
+  background-color: var(--color-two);
+  border: none;
+  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+}
+.home main .box__style__home:hover {
+  background-color: var(--color-three);
+}
+.home main .box__style__home__but {
+  text-decoration: none;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  color: var(--color-one);
+}
+.home footer {
+  background-color: var(--main-bg-color);
+  height: 50px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-top: 1px dotted var(--color-one);
+}
+.home footer label {
+  font-size: 30px;
+  padding-left: 5px;
+  margin: 0;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home footer label .icon_fa {
+  font-family: FontAwesome;
+  font-size: 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f09020;
+}
+.home footer label input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/*# sourceMappingURL=style.css.map */

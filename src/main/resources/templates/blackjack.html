@@ -6,17 +6,21 @@
 
     <title>BlackJack</title>
 
+    <script src="https://unpkg.com/vue"></script>
+
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/vue.min.js"></script>
     <script src="assets/js/vuex.js"></script>
     <script src="assets/js/bootstrap.js"></script>
-    <script src="https://unpkg.com/vue"></script>
+    <script src="assets/js/darkmode.js"></script>
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style-bj.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
 
 </head>
-<body class="" th:classappend="${isLightTheme} ? light">
+<body class="blackjack" th:classappend="${isLightTheme} ? light">
 <div id="body">
     <header class="row">
         <div class="offset-6 col-2" id="message">
@@ -156,9 +160,7 @@
     </footer>
 
 
-
+    <script src="assets/js/script.js"></script>
 </div>
-<script src="assets/js/darkmode.js"></script>
-<script src="assets/js/script.js"></script>
 </body>
 </html>

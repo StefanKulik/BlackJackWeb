@@ -1,0 +1,3 @@
+cd P:\user\Stefan K\Programming\Projekte-IntelliJ\Projects\BlackJackWeb\src\main\resources\static\assets\css
+sass --watch style.scss:style.css
+

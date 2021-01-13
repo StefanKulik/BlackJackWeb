@@ -40,7 +40,7 @@ public class Application {
                 }
 
 
-                MainWindow m = new MainWindow("http://localhost:83/", false, false);
+                //MainWindow m = new MainWindow("http://localhost:83/", false, false);
 
 
                 System.out.println("gestartet!");
