@@ -1,2 +1,194 @@
 @import 'Blackjack/blackjack';
 @import 'Home/home';
+@import 'Placeholder/placeholder';
+
+:root {
+  --main-bg-color: #121212;
+  --color-one: #123456;
+  --color-two: rgba(255,255,255,0.02);
+  --color-three: rgba(255,255,255, 0.1);
+  --color-karte: #ffffff;
+}
+.light {
+  --main-bg-color: #ffffff;
+  --color-one: #ADADAD;
+  --color-two: rgba(0, 0, 0, 0.02);
+  --color-three: rgba(0, 0, 0, 0.1);
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-weight: 900;
+  src: url("/assets/fonts/fontawesome-webfont.ttf") format("truetype");
+}
+
+body {
+  background-color: var(--main-bg-color);
+  color: var(--color-one);
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  font-family: 'Comic Sans MS', serif;
+
+  .row {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+header {
+  border-bottom: 1px solid var(--color-one);
+  height: 90px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+
+  color: var(--color-one);
+
+  .result {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1{
+      margin: 0;
+      padding: 0;
+      font-size: 35px;
+
+    }
+  }
+}
+
+menu {
+  height:50px;
+  padding: 0;
+  margin: 0 10%;
+
+    .but {
+      float: left;
+      list-style-type: none;
+      margin: 0;
+      overflow: hidden;
+      position: sticky;
+      top: 0;
+      height: 50px;
+      border:none;
+      width: 156px;
+      padding-top: 6px;
+      cursor: pointer;
+      font-size: 50px;
+      color: #ADADAD;
+      display: inline-block;
+
+      .col-md-1 {
+        padding: 0;
+        margin: 0;
+      }
+
+      &:hover {
+        .bar2 {
+          width: 25px;
+        }
+        .bar4 {
+          opacity: 1;
+          width: 14px;
+          height: 5px;
+          background-color: var(--color-one);
+          margin: 6px 56px;
+          text-align: center;
+          transform: rotate(45deg) translate(6px, -33px);
+        }
+        .bar5 {
+          opacity: 1;
+          width: 14px;
+          height: 5px;
+          background-color: var(--color-one);
+          margin: 6px 56px;
+          text-align: center;
+          transform: rotate(-45deg) translate(46px, -7px);
+        }
+      }
+
+      .bar1, .bar2, .bar3 {
+        width: 32px;
+        height: 5px;
+        background-color: var(--color-one);
+        margin: 6px 56px;
+        text-align: center;
+      }
+
+      .bar4 {
+        opacity: 1;
+        width: 15px;
+        height: 5px;
+        background-color: var(--color-one);
+        margin: 6px 56px;
+        text-align: center;
+        transform: rotate(90deg) translate(-28px, -30px);
+      }
+      .bar5 {
+        opacity: 1;
+        width: 15px;
+        height: 5px;
+        background-color: var(--color-one);
+        margin: 6px 56px;
+        text-align: center;
+        transform: rotate(90deg) translate(-27px, -30px);
+      }
+    }
+  }
+
+main {
+  height:calc(100vh - 191px);
+  background-color: brown;
+}
+
+footer {
+  background-color: var(--main-bg-color);
+  height: 50px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-top: 1px dotted var(--color-one);
+
+  //background-color: yellow;
+
+  label{
+    font-size: 30px;
+    padding-left: 5px;
+    margin: 0;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    //background-color: #0c5460;
+    //border: 1px solid #0b2e13;
+
+    .icon_fa{
+      font-family:FontAwesome;
+      font-size: 30px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #f09020;
+    }
+
+    input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+  }
+}

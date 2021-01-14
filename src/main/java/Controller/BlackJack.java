@@ -34,17 +34,25 @@ public class BlackJack {
         return "blackjack.html";
     }
 
-    @GetMapping("/test")
-    public String test(Model model) {
+    @GetMapping("/placeholder")
+    public String placeholder(Model model) {
 
         if (Config.getInstance().getTheme() == Config.Theme.LIGHT) {
             model.addAttribute("isLightTheme", "light");
         }
 
-        return "test.html";
+        return "placeholder.html";
     }
 
+    @GetMapping("/index")
+    public String index(Model model) {
 
+        if (Config.getInstance().getTheme() == Config.Theme.LIGHT) {
+            model.addAttribute("isLightTheme", "light");
+        }
+
+        return "index.html";
+    }
 
 
 }
