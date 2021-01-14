@@ -70,6 +70,7 @@
   margin: 10px;
   width: 100%;
   border-radius: 10px;
+  box-shadow: inset 0 0 10px #000000;
 }
 .blackjack .wrapper {
   padding: 0;
@@ -117,6 +118,7 @@
   border-radius: 10px;
   margin: 0;
   padding: 0;
+  box-shadow: 0 8px 6px -6px var(--main-bg-color);
 }
 .home .box__style__home:hover {
   background-color: var(--color-three);
@@ -199,7 +201,10 @@ header div h1 {
 menu {
   height: 50px;
   padding: 0;
-  margin: 0 10%;
+  margin: 0;
+  background-color: var(--main-bg-color);
+  width: 100%;
+  border-top: 1px dotted var(--color-one);
 }
 menu .but {
   float: left;
@@ -267,21 +272,7 @@ menu .but .bar5 {
   text-align: center;
   transform: rotate(90deg) translate(-27px, -30px);
 }
-
-main {
-  height: calc(100vh - 191px);
-  background-color: brown;
-}
-
-footer {
-  background-color: var(--main-bg-color);
-  height: 50px;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  border-top: 1px dotted var(--color-one);
-}
-footer label {
+menu label {
   font-size: 30px;
   padding-left: 5px;
   margin: 0;
@@ -290,7 +281,7 @@ footer label {
   justify-content: center;
   align-items: center;
 }
-footer label .icon_fa {
+menu label .icon_fa {
   font-family: FontAwesome;
   font-size: 30px;
   cursor: pointer;
@@ -299,10 +290,15 @@ footer label .icon_fa {
   align-items: center;
   color: #f09020;
 }
-footer label input {
+menu label input {
   opacity: 0;
   width: 0;
   height: 0;
+}
+
+main {
+  height: calc(100vh - 191px);
+  background-color: brown;
 }
 
 /*# sourceMappingURL=style.css.map */

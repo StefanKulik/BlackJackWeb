@@ -7,16 +7,6 @@ function menuIcon(){
 
 
 
-// /*<![CDATA[*/
-// var app3 = new Vue({
-//     el: '#message',
-//     data: {
-//         message: new Date().toLocaleDateString(),
-//     }
-// });
-// /*]]>*/
-
-
 /*<![CDATA[*/
 var app = new Vue({
     el: '#body',
@@ -31,6 +21,9 @@ var app = new Vue({
         lastGame: "",
         index: 2,
         games: 0,
+
+
+
         message: new Date().toLocaleDateString(),
     },
     methods: {
@@ -245,7 +238,18 @@ var app = new Vue({
             });
         },
 
+        test: function(){
+            $.ajax({
+                type: "Post",
+                contentType: "application/json",
+                url: "/lastGames/",
+                data: null,
+                dataType: 'json',
+                success: function (data) {
 
+                }
+            });
+        },
 
     },
 });

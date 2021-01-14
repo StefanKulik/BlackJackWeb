@@ -16,7 +16,7 @@ public class BlackJack {
             model.addAttribute("isLightTheme", "light");
         }
 
-        return "home.html";
+        return "main/home.html";
     }
 
     @GetMapping("/")
@@ -31,7 +31,7 @@ public class BlackJack {
             model.addAttribute("isLightTheme", "light");
         }
 
-        return "blackjack.html";
+        return "main/blackjack.html";
     }
 
     @GetMapping("/placeholder")
@@ -41,7 +41,7 @@ public class BlackJack {
             model.addAttribute("isLightTheme", "light");
         }
 
-        return "placeholder.html";
+        return "main/placeholder.html";
     }
 
     @GetMapping("/index")

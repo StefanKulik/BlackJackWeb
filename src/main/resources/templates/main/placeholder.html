@@ -8,13 +8,17 @@
 
     <header th:replace="fragments/header"></header>
 
-    <menu th:replace="fragments/menu" ></menu>
+    <menu th:replace="fragments/menu"></menu>
 
 
-    <main th:replace="${test}" id="spielfeld"></main>
+    <main th:fragment="placeholder" id="spielfeld">
+        <div class="row placeholder">
+            PLACEHOLDER
+        </div>
+    </main>
 
 
-    <footer th:replace="fragments/footer"></footer>
+    <footer th:replace="fragments/footer" ></footer>
 
 
     <script src="assets/js/script.js"></script>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,8 +14,8 @@
     <script src="assets/js/bootstrap.js"></script>
     <script src="assets/js/darkmode.js"></script>
 
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
 </head>
 <body class="" th:classappend="${isLightTheme} ? light">
@@ -42,7 +42,7 @@
 
     <main id="spielfeld">
 
-        <div class="row blackjack">
+        <div th:fragment="blackjack" class="row blackjack">
             <div id="spielflaeche" class="col-10 spielflaeche" >
                 <div class="row 1" v-if="!ende">
                     <div id="spielerWert" class="offset-1 col-3 all">

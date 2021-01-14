@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,7 +31,7 @@
 
     <main id="spielfeld">
 
-        <div class="row home">
+        <div th:fragment="home" class="row home">
             <div class="col-6 box__style box__style__1">
                 <button class="box__style__home"><a class="box__style__home__but" href="blackjack">BlackJack</a></button>
             </div>
