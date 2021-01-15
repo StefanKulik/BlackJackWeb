@@ -1,4 +1,4 @@
-<menu th:fragment="menu" id="but" class="row" style="user-select: None;">
+<menu th:fragment="menu" id="but" class="row">
     <a   class="col-1 but" href="home">
         <div class="bar1"></div>
         <div class="bar2"></div>
@@ -7,12 +7,12 @@
         <div class="bar5"></div>
     </a>
 
-
-    <label class="offset-10 col-1">
-        <span class="icon_fa" id="symbol" style="color:var(--color-one);" >&#xf186;</span>
-        <input checked id="switch" onclick="setClassToBody()" type="checkbox" >
-    </label>
-    <label class="" for="switch" id="label"></label>
-
+    <div class="offset-10 col-1" style="user-select: None;">
+        <label>
+            <span class="icon_fa" id="symbol" style="color:var(--color-one);" >&#xf186;</span>
+            <input checked id="switch" onclick="setClassToBody()" type="checkbox" >
+        </label>
+        <label class="" for="switch" id="label"></label>
+    </div>
 </menu>
 

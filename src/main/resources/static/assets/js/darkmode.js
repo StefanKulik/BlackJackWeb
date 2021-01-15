@@ -1,5 +1,4 @@
 $( document ).ready(function() {
-    setClassToBody();
     if($("body").hasClass("light")){
         document.getElementById('switch').checked = false;
         //document.getElementById('label').innerText = "Light";
