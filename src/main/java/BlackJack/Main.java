@@ -24,6 +24,8 @@ public class Main {
 
         System.setProperty("sun.java2d.uiScale", "1");
 
+
+
         Application.main(args);
 
     }

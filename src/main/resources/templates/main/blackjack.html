@@ -13,9 +13,9 @@
 
     <main th:fragment="blackjack" id="spielfeld">
         <div  class="row blackjack">
-            <div id="spielflaeche" class="col-10 spielflaeche" >
+            <div id="spielflaeche" class="col-9 spielflaeche" >
                 <div class="row 1" v-if="!ende">
-                    <div id="spielerWert" class="offset-1 col-3 all">
+                    <div id="spielerWert" class="col-3 all">
                         <div class="box-style" style="text-align: center">
                             <div style="font-size: 35px">Spieler Wert:</div>
                             <h1 style="font-size: 150px">{{wertSpieler}}</h1>
@@ -23,15 +23,14 @@
                     </div>
 
 
-                    <div id="spielerAuflistung" class="col-4 all">
+                    <div id="spielerAuflistung" class="col-9 all">
                         <div class="box-style">
                             <table class="table table-hover">
                                 <tr>
                                     <th style="text-decoration: underline; text-decoration-style: solid; font-size: 30px">Karten Spieler</th>
                                 </tr>
-                                <tr >
-                                    <td style="display:flex">
-
+                                <tr>
+                                    <td>
                                         <div class="karteSpieler" v-for="karte in kartenSpieler" style="margin-right: 15px;">{{karte}}</div>
                                     </td>
                                 </tr>
@@ -41,15 +40,18 @@
                 </div>
 
                 <div class="row 2" v-if="!ende">
-                    <div class="col-4 result" id="lastGame">
-                        <h3>Last Games: </h3><h3 v-for="game in lastGame">&nbsp;{{game}}</h3>
-                    </div>
+                    <div class="offset-8 col-4 ergebnis">
+                        <div id="lastGame" class="result">
+                            <h2>Last Games: </h2><h3 v-for="game in lastGame">&nbsp;{{game}}</h3>
+                        </div>
 
-                    <div id="anzeige" class="offset-5 col-3 all">
-                        <div class="box-style" style="display:flex">
-                            <h1 style="font-size: 58px">{{ergebnis}}</h1>
+                        <div id="anzeige" class=" all">
+                            <div class="box-style">
+                                <h1 style="font-size: 58px">{{ergebnis}}</h1>
+                            </div>
                         </div>
                     </div>
+
 
                     <!--                <div id="anzahlCredits" class="col-md-2 all" >-->
                     <!--                    <div class="box-style" style="display:flex">-->
@@ -59,21 +61,21 @@
                 </div>
 
                 <div class="row 3" v-if="!ende">
-                    <div id="croupierWert" class="offset-1 col-3 all">
+                    <div id="croupierWert" class="col-3 all">
                         <div class="box-style" style="text-align: center">
                             <div style="font-size: 35px">Dealer Wert:</div>
                             <h1 style="font-size: 150px">{{wertDealer}}</h1>
                         </div>
                     </div>
 
-                    <div id="croupierAuflistung" class="col-3 all">
+                    <div id="croupierAuflistung" class="col-9 all">
                         <div class="box-style">
                             <table class="table table-hover">
                                 <tr>
                                     <th style="text-decoration: underline; text-decoration-style: solid; font-size: 30px">Karten Dealer</th>
                                 </tr>
                                 <tr>
-                                    <td style="font-size: 30px; display: flex" >
+                                    <td>
                                         <div class="karteDealer" v-for="karte in kartenDealer" style="margin-right: 15px;">{{karte}}</div>
                                     </td>
                                 </tr>
@@ -83,7 +85,7 @@
                 </div>
             </div>
 
-            <div id="buttons" class="col-2 wrapper">
+            <div id="buttons" class="col-3 wrapper">
                 <div class="row 1">
                     <div id="stay" class="col wrapper__inner">
                         <button class="button" @click="stay" v-if="displ" v-on:click="displ = false">
@@ -99,7 +101,22 @@
                     </div>
                 </div>
 
-                <div class="row 3" id="einsatz"> </div>
+                <div class="row 3 pot" id="einsatz">
+                    <div>
+                        <h1 v-if="potValue">Pot: {{pot}}</h1>
+                        <h1 class="error_msg" v-else>{{msg}}</h1>
+                    </div>
+                    <div>
+                        <h1>Einsatz: {{counter}}</h1>
+                    </div>
+                    <div>
+                        <button @click="submit_value">Submit</button>
+                        <button @click="counter+=10">+10</button>
+                        <button @click="counter+=50">+50</button>
+                        <button @click="counter+=100">+100</button>
+                        <button @click="counter-=counter; potValue=true; pot-=pot">Reset</button>
+                    </div>
+                </div>
 
                 <div class="row 4">
                     <div id="neueRunde" class="col wrapper__inner">

@@ -183,5 +183,9 @@ public class BlackJackRest {
         return lastFiveGames;
     }
 
+    @PostMapping("einsatz")
+    public void einsatz(@RequestParam(name = "pot") int pot) {
+        System.out.println(pot);
+    }
 
 }

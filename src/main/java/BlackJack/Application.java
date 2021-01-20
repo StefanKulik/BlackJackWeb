@@ -4,6 +4,7 @@ import BlackJack.gameLogic.Game;
 import org.cef.CefApp;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
@@ -13,10 +14,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import java.lang.reflect.Field;
 
 
-@SpringBootApplication
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
 @ComponentScan(basePackages = {"Controller"})
-@EnableJpaRepositories(basePackages = "Test.database.repositories")
-@EntityScan(basePackages = {"Test.database.tables"})
+//@EnableJpaRepositories(basePackages = "Test.database.repositories")
+//@EntityScan(basePackages = {"Test.database.tables"})
 public class Application {
 
     public static Game spiel;
@@ -40,7 +41,7 @@ public class Application {
                 }
 
 
-                //MainWindow m = new MainWindow("http://localhost:83/", false, false);
+                //MainWindow m = new MainWindow("http://localhost:84/", false, false);
 
 
                 System.out.println("gestartet!");

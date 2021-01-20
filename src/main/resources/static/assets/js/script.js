@@ -4,7 +4,9 @@ function menuOpen() {
 function menuIcon(){
     document.getElementById("but").classList.toggle("change");
 }
-
+function submitPot() {
+    $.post("/einsatz", {"pot":app.pot}, function(result){});
+}
 
 
 /*<![CDATA[*/
@@ -22,7 +24,10 @@ var app = new Vue({
         index: 2,
         games: 0,
 
-
+        counter: 0,
+        pot: 0,
+        msg: "",
+        potValue: true,
 
         message: new Date().toLocaleDateString(),
     },
@@ -200,7 +205,18 @@ var app = new Vue({
                 data: null,
                 dataType: 'json',
                 success: function (data) {
-                    app.ergebnis = data;
+                    if( data === "W") {
+                        app.ergebnis = "WIN";
+                    }else if( data === "L") {
+                        app.ergebnis = "LOSE";
+                    }else if( data === "P") {
+                        app.ergebnis = "PUSH";
+                    }else if( data === "B") {
+                        app.ergebnis = "BUST";
+                    }else if( data === "21"){
+                        app.ergebnis = "BLACKJACk";
+                    }
+
                 }
             });
         },
@@ -238,19 +254,17 @@ var app = new Vue({
             });
         },
 
-        test: function(){
-            $.ajax({
-                type: "Post",
-                contentType: "application/json",
-                url: "/lastGames/",
-                data: null,
-                dataType: 'json',
-                success: function (data) {
-
-                }
-            });
+        submit_value: function(){
+            if(app.counter <=100) {
+                app.msg = "";
+                app.potValue = true;
+                app.pot = app.counter;
+                submitPot();
+            }else {
+                app.potValue = false;
+                app.msg = "Einsatz darf nicht über 100 sein"
+            }
         },
-
     },
 });
 /*]]>*/
