@@ -1,23 +1,23 @@
 package BlackJack.gameLogic;
 
 import BlackJack.Config;
-import BlackJack.GuiWindow.MainWindow;
 import BlackJack.Main;
 import org.cef.CefApp;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
 import java.lang.reflect.Field;
 
 
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
+@SpringBootApplication
 @ComponentScan(basePackages = {"Controller"})
-//@EnableJpaRepositories(basePackages = "Test.database.repositories")
-//@EntityScan(basePackages = {"Test.database.tables"})
+@EnableJpaRepositories(basePackages = "Database.repositories")
+@EntityScan(basePackages = {"Database.tables"})
 public class Application {
 
     public static Game spiel;

@@ -7,9 +7,6 @@ buildscript {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.4.RELEASE")
     }
 }
-plugins {
-    id 'java'
-}
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
@@ -48,7 +45,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
-    implementation 'org.postgresql:postgresql'
+    runtimeOnly 'org.postgresql:postgresql'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
