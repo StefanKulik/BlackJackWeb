@@ -25,6 +25,17 @@ function setClassToBody() {
     }
 }
 
+$( document ).ready(function() {
+    if($("body").hasClass("light")){
+        document.getElementById('switch').checked = false;
+        //document.getElementById('label').innerText = "Light";
+        document.getElementById("symbol").innerHTML = "&#xf185;";
+    }else{
+        document.getElementById('switch').checked = true;
+        // document.getElementById('label').innerText = "Dark";
+        document.getElementById("symbol").innerHTML = "&#xf186;";
+    }
 
+});
 
 

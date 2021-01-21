@@ -1,6 +1,7 @@
 package BlackJack.gameLogic;
 
 import BlackJack.Config;
+import BlackJack.GuiWindow.MainWindow;
 import BlackJack.Main;
 import org.cef.CefApp;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -41,7 +42,7 @@ public class Application {
                 }
 
 
-                //MainWindow m = new MainWindow("http://localhost:82/", false, false);
+                MainWindow m = new MainWindow("http://localhost:82/", false, false);
 
                 Config.getInstance().loadConfig();
                 System.out.println("gestartet!");
