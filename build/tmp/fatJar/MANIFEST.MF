@@ -1,5 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Title: BlackJack
-Implementation-Version: 0.2
-Main-Class: spielLogik.Startklasse
-
