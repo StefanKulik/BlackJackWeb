@@ -12,11 +12,6 @@ public class Game {
 
 //  --- determine card ---  \\
 
-    /** output current drawn card */
-    public Cards getCurrentCardPlayer() {
-        return drawnCardsPlayer.get(drawnCardsPlayer.size() - 1);
-    }
-
     /** draw random card */
     public Cards drawCard() {
         if (cardDeck.deck.size() == 0) {
@@ -50,35 +45,16 @@ public class Game {
         }
         return numberCards;
     }
+
 //  ------------------------  \\
 
 
 //  --- player methods ---  \\
 
-    /** deals all cards from the player deck */
-    public void getDrawnCardsPlayer() {
-        int count = 0;
-        while (count < drawnCardsPlayer.size()) {
-
-            System.out.print("\t" + drawnCardsPlayer.get(count).getPicture());
-            count += 1;
-        }
-        System.out.println();
-        System.out.println();
-    }
-
-//    public String getEinzelneKarteSpieler(int index) { //bestimmte Karte wird zurückgegeben
-//        return gezogeneKartenSpieler.get(index).getBild();
-//    }
-
     /** Output total value player */
     public int getTotalValuePlayer() {
         return setTotalValuePlayer();
     }
-
-//    public int getGezogeneKartenAnzahlSpieler() { //gibt Anzahl an Karten im Spielerdeck aus
-//        return gezogeneKartenSpieler.size();
-//    }
 
     /** adding drawn card to player deck */
     public void setDrawnCardsPlayer(Cards card) {
@@ -146,36 +122,10 @@ public class Game {
 
 //  --- Dealer methods ---  \\
 
-    /** deals all cards from the dealer deck */
-    public void getDrawnCardsDealer() {
-        int coutn = 0;
-        while (coutn < drawnCardsDealer.size()) {
-            System.out.print("\t" + drawnCardsDealer.get(coutn).getPicture());
-            coutn += 1;
-        }
-        System.out.println("");
-        System.out.println("");
-    }
-
-    /** deals the dealer´s first drawn card */
-    public void getFirstCardDealer() {
-        System.out.println("");
-        System.out.println("Erste Karte Dealers: " + drawnCardsDealer.get(0).getPicture());
-        System.out.println("");
-    }
-
-//    public String getEinzelneKarteCroupiers(int index) { //bestimme Karte wird zurückgegeben
-//        return gezogeneKartenCroupiers.get(index).getBild();
-//    }
-
     /** outputs the dealer´s total value */
     public int getTotalValueDealer() {
         return setTotalValueDealer();
     }
-
-//    public int getGezogeneKartenAnzahlDealers() { //gibt Anzahl an Karten im Dealerdeck aus
-//        return gezogeneKartenDealer.size();
-//    }
 
     /** adding drawn card to dealer deck */
     public void setDrawnCardsDealer(Cards card) {

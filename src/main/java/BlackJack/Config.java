@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 
 public class Config {
@@ -13,9 +14,7 @@ public class Config {
     private static Config INSTANCE = new Config();
 
     // "private" verhindert die Erzeugung des Objektes über andere Methoden
-    private Config() {
-
-    }
+    private Config() {}
 
     // Eine nicht synchronisierte Zugriffsmethode auf Klassenebene.
     public static Config getInstance() {
@@ -24,19 +23,13 @@ public class Config {
 
     private final String configFilePath = Main.pathUser + "\\config.json";
 
-//    private Locale language = Locale.getDefault();
-
-//    public void setThreads(int threads) {
-//        this.threads = threads;
-//    }
-
-//    public int getThreads() {
-//        return threads;
-//    }
-
     public enum Theme {LIGHT, DARK}
 
     private Theme theme = Theme.LIGHT;
+
+    private int capital;
+
+    private ArrayList<String> lastGames;
 
 
     @JsonIgnore
@@ -48,11 +41,6 @@ public class Config {
                 return "LIGHT";
         }
     }
-
-//    @JsonIgnore
-//    public String getLanguageCode() {
-//        return Config.getInstance().getLanguage().toString().substring(0, 2).toUpperCase();
-//    }
 
     public synchronized boolean loadConfig() {
         File config = new File(configFilePath);
@@ -84,19 +72,26 @@ public class Config {
         }
     }
 
-//    public void setLanguage(Locale myLanguage) {
-//        this.language = myLanguage;
-//    }
-
     public void setTheme(Theme myTheme) {
         this.theme = myTheme;
     }
-
-//    public Locale getLanguage() {
-//        return language;
-//    }
-
     public Theme getTheme() {
         return theme;
+    }
+
+
+    public void setCapital(int capital) {
+        this.capital = capital;
+    }
+    public int getCapital() {
+        return this.capital;
+    }
+
+
+    public void setLastGames(ArrayList<String> lastgames) {
+        this.lastGames = lastgames;
+    }
+    public ArrayList<String> getLastGames() {
+        return this.lastGames;
     }
 }

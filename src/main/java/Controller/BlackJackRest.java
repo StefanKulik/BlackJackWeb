@@ -1,9 +1,10 @@
 package Controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import BlackJack.Application;
+import BlackJack.gameLogic.Application;
 import BlackJack.Config;
 
 import java.util.ArrayList;
@@ -14,14 +15,14 @@ public class BlackJackRest {
 
     ArrayList<String> playerCards = new ArrayList<>();
     ArrayList<String> dealerCards = new ArrayList<>();
-    ArrayList<String> lastFiveGames = new ArrayList<String>();
+    ArrayList<String> lastFiveGames = new ArrayList<>();
     int i;
     int numberPlayer;
     int index = 2;
+    int potPlayer;
 
 
-
-    @PostMapping("/setTheme")
+    @PostMapping("setTheme")
     public String setTheme(@RequestParam(name = "theme") String theme) {
 
         switch (theme) {
@@ -40,7 +41,30 @@ public class BlackJackRest {
     }
 
 
-    @PostMapping("/newRound")
+// Round Methods
+    @PostMapping("end")
+    public void end() {
+        index = 2;
+        playerCards.clear();
+        dealerCards.clear();
+        Application.spiel.resetDrawnCards();
+        Application.spiel.resetTotalValuePlayer();
+        Application.spiel.resetTotalValueDealer();
+        Application.spiel.shuffleCardDeck();
+
+        Config.getInstance().loadConfig();
+        lastFiveGames = Config.getInstance().getLastGames();
+        if(lastFiveGames.size()>5){
+            lastFiveGames.remove(0);
+        }
+        Config.getInstance().setLastGames(lastFiveGames);
+        Config.getInstance().saveConfig();
+    }
+
+    @PostMapping("stay")
+    public void stay() { }
+
+    @PostMapping("newRound")
     public void newRound() {
         playerCards.clear();
         dealerCards.clear();
@@ -80,8 +104,7 @@ public class BlackJackRest {
         numberPlayer = 2;
     }
 
-
-    @PostMapping("/hit")
+    @PostMapping("hit")
     public ArrayList<String> hitCard(){
         if(Application.spiel.numberCardsRemaining() <= 78 || Application.spiel.numberCardsRemaining() <= 81) {
             Application.spiel.shuffleCardDeck();
@@ -100,23 +123,26 @@ public class BlackJackRest {
 
         return playerCards;
     }
+
+
+// Player Methods
     @PostMapping("playerCards")
     public ArrayList<String> playerCards(){
         return playerCards;
     }
+
     @PostMapping("playerValue")
     public int playerValue() {
         return  Application.spiel.getTotalValuePlayer();
     }
 
 
-
-
-
+// Dealer Methods
     @PostMapping("dealerStartCard")
     public ArrayList<String> dealerStartCard(){
         return dealerCards;
     }
+
     @PostMapping("dealerCards")
     public ArrayList<String> dealerCards() {
         while (Application.spiel.getTotalValueDealer() < 21) {
@@ -143,49 +169,91 @@ public class BlackJackRest {
         }
         return dealerCards;
     }
+
     @PostMapping("dealerValue")
     public int dealerValue() {
         return Application.spiel.getTotalValueDealer();
     }
 
 
-
-
-
-    @PostMapping("end")
-    public void end() {
-        index = 2;
-        playerCards.clear();
-        dealerCards.clear();
-        Application.spiel.resetDrawnCards();
-        Application.spiel.resetTotalValuePlayer();
-        Application.spiel.resetTotalValueDealer();
-        Application.spiel.shuffleCardDeck();
-    }
-    @PostMapping("stay")
-    public void stay() {
-
-    }
+// Result Methods
     @PostMapping("result")
     public String result(){
+        Config.getInstance().loadConfig();
+        lastFiveGames = Config.getInstance().getLastGames();
         if(lastFiveGames.size() < 6) {
             lastFiveGames.add(Application.spiel.determineWinner());
         }else if(lastFiveGames.size() == 6) {
             lastFiveGames.remove(0);
             lastFiveGames.add(Application.spiel.determineWinner());
         }
+        Config.getInstance().setLastGames(lastFiveGames);
+        Config.getInstance().saveConfig();
         System.out.println(lastFiveGames);
         return "\"" +Application.spiel.determineWinner()+ "\"";
     }
 
     @PostMapping("lastGames")
     public ArrayList<String> lastFiveGames (){
-        return lastFiveGames;
+        Config.getInstance().loadConfig();
+        return Config.getInstance().getLastGames();
+    }
+    @PostMapping("/lastGamesSize")
+    public int lastGamesSize(){
+        return Config.getInstance().getLastGames().size();
     }
 
+
+// Einsatz, Pot, Capital Methods
     @PostMapping("einsatz")
     public void einsatz(@RequestParam(name = "pot") int pot) {
         System.out.println(pot);
+        potPlayer = pot;
+        Config.getInstance().setCapital(Config.getInstance().getCapital() - pot);
+
+        Config.getInstance().saveConfig();
+        Config.getInstance().loadConfig();
+
+        System.out.println(Config.getInstance().getCapital());
     }
 
+    @PostMapping("capital")
+    public int capital() {
+        Config.getInstance().loadConfig();
+        System.out.println("Vor Runde: " + Config.getInstance().getCapital());
+        return Config.getInstance().getCapital();
+    }
+
+    @PostMapping("calculateCapital")
+    public int calculateCapital() {
+        String result = Application.spiel.determineWinner();
+        System.out.println(result);
+        switch(result) {
+            case "W":
+                System.out.println(Config.getInstance().getCapital());
+                Config.getInstance().setCapital(Config.getInstance().getCapital() + potPlayer * 2);
+                System.out.println("Gewinn: " + potPlayer*2);
+                System.out.println(Config.getInstance().getCapital());
+                break;
+            case "P":
+                System.out.println(Config.getInstance().getCapital());
+                Config.getInstance().setCapital(Config.getInstance().getCapital() + potPlayer);
+                System.out.println("Gewinn: " + potPlayer);
+                System.out.println(Config.getInstance().getCapital());
+                break;
+            case "21":
+                System.out.println(Config.getInstance().getCapital());
+                Config.getInstance().setCapital(Config.getInstance().getCapital() + potPlayer * 3);
+                System.out.println("Gewinn: " + potPlayer*3);
+                System.out.println(Config.getInstance().getCapital());
+                break;
+            case "B": case "L":
+                System.out.println("Gewinn: " + -potPlayer);
+        }
+
+        Config.getInstance().saveConfig();
+        Config.getInstance().loadConfig();
+        System.out.println("Nach Runde: " + Config.getInstance().getCapital());
+        return Config.getInstance().getCapital();
+    }
 }

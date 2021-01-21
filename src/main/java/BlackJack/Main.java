@@ -1,6 +1,9 @@
 package BlackJack;
 
 
+import BlackJack.GuiWindow.SplashScreen;
+import BlackJack.gameLogic.Application;
+
 public class Main {
 
     public static String pathUser = System.getProperty("user.dir") + "\\userdata\\";
@@ -17,10 +20,10 @@ public class Main {
 
         Config.getInstance().loadConfig();
 
-        new Thread(() -> {
-            SplashScreen splash = new SplashScreen(10000);
-            splash.dispose();
-        }).start();
+//        new Thread(() -> {
+//            SplashScreen splash = new SplashScreen(12000);
+//            splash.dispose();
+//        }).start();
 
         System.setProperty("sun.java2d.uiScale", "1");
 

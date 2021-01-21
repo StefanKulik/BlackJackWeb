@@ -137,9 +137,36 @@
 
 
     .pot {
-      display: inline-grid;
+      display: flow-root;
       justify-content: center;
       align-items: center;
+
+      .buttons {
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .row {
+        height: calc(((100vh - 191px) / 5)/2);
+
+        .button {
+          height: 65px;
+          width: 80px;
+          color: var(--main-bg-color);
+          display: flex;
+          margin: 2px;
+          justify-content: center;
+          align-items: center;
+          background-color: var(--color-three);
+          border: none;
+          outline: none;
+          border-radius: 5px;
+        }
+      }
+      h1 {
+        font-size: 25px;
+      }
     }
 
     .row {

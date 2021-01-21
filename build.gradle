@@ -7,6 +7,9 @@ buildscript {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.4.RELEASE")
     }
 }
+plugins {
+    id 'java'
+}
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
@@ -59,5 +62,5 @@ dependencies {
 mainClassName = 'BlackJack.Main'
 
 bootJar {
-    project.name + "-web"
+    project.name
 }

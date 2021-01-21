@@ -103,9 +103,34 @@
   margin: 0;
 }
 .blackjack .wrapper .pot {
-  display: inline-grid;
+  display: flow-root;
   justify-content: center;
   align-items: center;
+}
+.blackjack .wrapper .pot .buttons {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.blackjack .wrapper .pot .row {
+  height: calc(((100vh - 191px) / 5)/2);
+}
+.blackjack .wrapper .pot .row .button {
+  height: 65px;
+  width: 80px;
+  color: var(--main-bg-color);
+  display: flex;
+  margin: 2px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-three);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+.blackjack .wrapper .pot h1 {
+  font-size: 25px;
 }
 .blackjack .wrapper .row {
   height: calc((100vh - 191px) / 5);

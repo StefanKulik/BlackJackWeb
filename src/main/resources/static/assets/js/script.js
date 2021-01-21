@@ -1,9 +1,3 @@
-function menuOpen() {
-    document.getElementById("menu-bar").classList.toggle("show");
-}
-function menuIcon(){
-    document.getElementById("but").classList.toggle("change");
-}
 function submitPot() {
     $.post("/einsatz", {"pot":app.pot}, function(result){});
 }
@@ -15,23 +9,45 @@ var app = new Vue({
     data: {
         ende: true,
         displ: false,
+        potValue: true,
+        hitstay: false,
+
         kartenSpieler:[],
         kartenDealer: [],
+
         wertSpieler: null,
         wertDealer: null,
+
         ergebnis: "",
         lastGame: "",
+        msg: "",
+
+        lastGameSize: 0,
         index: 2,
         games: 0,
-
         counter: 0,
         pot: 0,
-        msg: "",
-        potValue: true,
+        capital: 0,
 
         message: new Date().toLocaleDateString(),
     },
     methods: {
+
+        stay: function(){
+            $.ajax({
+                type: "Post",
+                url: "/stay/",
+                success: function () {
+
+                    app.dealerKarten();
+                    app.reset();
+
+                    app.hitstay = false;
+                    app.displ = false;
+                }
+            });
+        },
+
         hit: function () {
             $.ajax({
                 type: "Post",
@@ -46,6 +62,60 @@ var app = new Vue({
                 }
             });
         },
+
+        neueRunde: function(){
+            $.ajax({
+                type: "Post",
+                url: "/newRound/",
+                success: function () {
+
+                    app.kartenSpieler = [];
+                    app.wertSpieler = null;
+                    app.spielerKarten();
+
+                    app.kartenDealer = [];
+                    app.wertDealer = null;
+                    app.dealerAnfangsKarten();
+
+                    app.lastGamesSize();
+
+                    app.ergebnis = "";
+
+                    app.index = 2;
+                    app.games++;
+
+                    app.displ = true;
+                }
+            });
+        },
+
+        start: function() {
+            app.ende = false;
+            app.submit_value();
+            app.hitstay = false;
+            app.letzen5Spiele();
+        },
+
+        end: function(){
+            $.ajax({
+                type: "Post",
+                url: "/end/",
+                success: function () {
+                    app.kartenSpieler = [];
+                    app.kartenDealer = [];
+                    app.wertSpieler = null;
+                    app.wertDealer = null;
+                    app.ergebnis = "";
+                    app.lastGame = [];
+
+                    app.ende = true;
+                    app.displ = false;
+                }
+            });
+        },
+
+
+
         spielerWert: function() {
             $.ajax({
                 type: "Post",
@@ -60,6 +130,7 @@ var app = new Vue({
                 }
             });
         },
+
         spielerKarten: function() {
             $.ajax({
                 type: "Post",
@@ -75,6 +146,8 @@ var app = new Vue({
                 }
             });
         },
+
+
 
         dealerAnfangsKarten: function(){
             $.ajax({
@@ -121,6 +194,7 @@ var app = new Vue({
                 }
             });
         },
+
         dealerKarten: function(){
             $.ajax({
                 type: "Post",
@@ -138,6 +212,7 @@ var app = new Vue({
                 }
             });
         },
+
         dealerWert: function(){
             $.ajax({
                 type: "Post",
@@ -151,52 +226,6 @@ var app = new Vue({
 
 
 
-        neueRunde: function(){
-            $.ajax({
-                type: "Post",
-                url: "/newRound/",
-                success: function () {
-                    app.kartenSpieler = [];
-                    app.wertSpieler = null;
-                    app.spielerKarten();
-
-                    app.kartenDealer = [];
-                    app.wertDealer = null;
-                    app.dealerAnfangsKarten();
-
-                    app.ergebnis = "";
-
-                    app.index = 2;
-                    app.games++;
-                }
-            });
-        },
-        stay: function(){
-            $.ajax({
-                type: "Post",
-                url: "/stay/",
-                success: function () {
-                    if(app.games>1){
-                        app.letzen5Spiele();
-                    }
-                    app.dealerKarten();
-                }
-            });
-        },
-        end: function(){
-            $.ajax({
-                type: "Post",
-                url: "/end/",
-                success: function () {
-                    app.kartenSpieler = [];
-                    app.kartenDealer = [];
-                    app.wertSpieler = null;
-                    app.wertDealer = null;
-                    app.ergebnis = "";
-                    app.lastGame = [];
-                }
-            });
-        },
         ergebnisAnzeige: function(){
             $.ajax({
                 type: "Post",
@@ -217,9 +246,12 @@ var app = new Vue({
                         app.ergebnis = "BLACKJACk";
                     }
 
+                    app.calculateCapital();
+                    app.letzen5Spiele();
                 }
             });
         },
+
         letzen5Spiele: function(){
             $.ajax({
                 type: "Post",
@@ -229,41 +261,90 @@ var app = new Vue({
                 dataType: 'json',
                 success: function (data) {
                     app.lastGame = []
-                    if(app.games === 1) {
-                        app.lastGame.push(data[0]);
-                    }else if(app.games === 2){
-                        app.lastGame.push(data[0]);
-                        app.lastGame.push(data[1]);
-                    }else if(app.games === 3){
-                        app.lastGame.push(data[0]);
-                        app.lastGame.push(data[1]);
-                        app.lastGame.push(data[2]);
-                    }else if(app.games === 4){
-                        app.lastGame.push(data[0]);
-                        app.lastGame.push(data[1]);
-                        app.lastGame.push(data[2]);
-                        app.lastGame.push(data[3]);
-                    }else{
+                    if(app.lastGameSize === 6) {
                         app.lastGame.push(data[0]);
                         app.lastGame.push(data[1]);
                         app.lastGame.push(data[2]);
                         app.lastGame.push(data[3]);
                         app.lastGame.push(data[4]);
+                    }else if(app.lastGameSize === 5) {
+                        app.lastGame.push(data[0]);
+                        app.lastGame.push(data[1]);
+                        app.lastGame.push(data[2]);
+                        app.lastGame.push(data[3]);
+                    }else if(app.lastGameSize === 4) {
+                        app.lastGame.push(data[0]);
+                        app.lastGame.push(data[1]);
+                        app.lastGame.push(data[2]);
+                    }else if(app.lastGameSize === 3) {
+                        app.lastGame.push(data[0]);
+                        app.lastGame.push(data[1]);
+                    }else if(app.lastGameSize === 2) {
+                        app.lastGame.push(data[0]);
+                    }else {
+                        app.lastGame = [];
                     }
+
                 }
             });
+        },
+        lastGamesSize: function(){
+            $.ajax({
+                type: "Post",
+                contentType: "application/json",
+                url: "/lastGamesSize/",
+                data: null,
+                dataType: 'json',
+                success: function (data) {
+                    app.lastGameSize = data;
+                }
+            });
+        },
+
+        reset: function() {
+            app.counter -= app.counter;
+            app.potValue = true;
+            app.pot -= app.pot;
         },
 
         submit_value: function(){
             if(app.counter <=100) {
                 app.msg = "";
                 app.potValue = true;
+                app.hitstay = true;
                 app.pot = app.counter;
                 submitPot();
             }else {
                 app.potValue = false;
                 app.msg = "Einsatz darf nicht über 100 sein"
             }
+            app.getCapital();
+        },
+
+        getCapital: function(){
+            $.ajax({
+                type: "Post",
+                contentType: "application/json",
+                url: "/capital/",
+                data: null,
+                dataType: 'json',
+                success: function (data) {
+                   app.capital = data;
+                }
+            });
+        },
+
+        calculateCapital: function(){
+            $.ajax({
+                type: "Post",
+                contentType: "application/json",
+                url: "/calculateCapital/",
+                data: null,
+                dataType: 'json',
+                success: function (data) {
+                    app.capital = data;
+                }
+            });
         },
     },
 });

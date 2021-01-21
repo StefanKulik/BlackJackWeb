@@ -1,3 +1,5 @@
 {
-  "theme" : "LIGHT"
+  "theme" : "LIGHT",
+  "capital" : 9080,
+  "lastGames" : [ "B", "L", "W", "B", "W" ]
 }

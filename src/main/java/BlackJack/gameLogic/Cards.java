@@ -1,11 +1,11 @@
 package BlackJack.gameLogic;
 
 public class Cards {
-    private String picture;
+    final private String picture;
     private int value;
     private int number;
 
-    public Cards() {}
+
 
     public Cards(String picture, int value, int number) {
         this.picture = picture;
@@ -38,10 +38,4 @@ public class Cards {
         return number;
     }
 
-    public void setPicture(String picture) {
-        this.picture = picture;
-    }
-    public void setNumber(int number) {
-        this.number = number;
-    }
 }

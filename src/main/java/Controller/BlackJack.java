@@ -8,6 +8,10 @@ import BlackJack.Config;
 @Controller
 public class BlackJack {
 
+    @GetMapping("/")
+    public String root() {
+        return "redirect:/home";
+    }
 
     @GetMapping("/home")
     public String home(Model model) {
@@ -16,12 +20,7 @@ public class BlackJack {
             model.addAttribute("isLightTheme", "light");
         }
 
-        return "main/home.html";
-    }
-
-    @GetMapping("/")
-    public String root() {
-        return "redirect:/home";
+        return "home.html";
     }
 
     @GetMapping("/blackjack")
@@ -31,7 +30,7 @@ public class BlackJack {
             model.addAttribute("isLightTheme", "light");
         }
 
-        return "main/blackjack.html";
+        return "blackjack.html";
     }
 
     @GetMapping("/placeholder")
@@ -41,18 +40,7 @@ public class BlackJack {
             model.addAttribute("isLightTheme", "light");
         }
 
-        return "main/placeholder.html";
+        return "placeholder.html";
     }
-
-    @GetMapping("/index")
-    public String index(Model model) {
-
-        if (Config.getInstance().getTheme() == Config.Theme.LIGHT) {
-            model.addAttribute("isLightTheme", "light");
-        }
-
-        return "index.html";
-    }
-
 
 }
