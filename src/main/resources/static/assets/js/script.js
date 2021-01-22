@@ -11,7 +11,7 @@ var app = new Vue({
         displ: false,
         potValue: true,
         hitstay: false,
-        max: true,
+        max: false,
 
         kartenSpieler:[],
         kartenDealer: [],
@@ -382,6 +382,14 @@ var app = new Vue({
                 url: "/verkleinern/",
                 success: function (data) {
                     app.max = true;
+                }
+            });
+        },
+        dragDrop: function(){
+            $.ajax({
+                type: "Post",
+                url: "/dragDrop/",
+                success: function (data) {
                 }
             });
         },

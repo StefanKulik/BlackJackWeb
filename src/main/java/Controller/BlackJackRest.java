@@ -26,7 +26,7 @@ public class BlackJackRest {
     int numberPlayer;
     int index = 2;
     int potPlayer;
-
+    static Point compCoords;
 
 
     @PostMapping("setTheme")
@@ -306,5 +306,37 @@ public class BlackJackRest {
             System.out.println("NullPointerException caught");
         }
 
+    }
+
+
+    @PostMapping("dragDrop")
+    public void dragDrop(){
+        Application.getWindow().addMouseListener(new MouseListener() {
+            public void mouseReleased(MouseEvent e) {
+                compCoords = null;
+            }
+
+            public void mousePressed(MouseEvent e) {
+                compCoords = e.getPoint();
+            }
+
+            public void mouseExited(MouseEvent e) {
+            }
+
+            public void mouseEntered(MouseEvent e) {
+            }
+
+            public void mouseClicked(MouseEvent e) {
+            }
+        });
+        Application.getWindow().addMouseMotionListener(new MouseMotionListener() {
+            public void mouseMoved(MouseEvent e) {
+            }
+
+            public void mouseDragged(MouseEvent e) {
+                Point currCoords = e.getLocationOnScreen();
+                Application.getWindow().setLocation(currCoords.x - compCoords.x, currCoords.y - compCoords.y);
+            }
+        });
     }
 }

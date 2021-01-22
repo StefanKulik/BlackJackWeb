@@ -3,7 +3,7 @@
 
 <head th:replace="fragments/head"></head>
 
-<body class="" th:classappend="${isLightTheme} ? light">
+<body class="" th:classappend="${isLightTheme} ? light" v-on:mousemove="dragDrop">
 <div id="body">
 
     <header th:replace="fragments/header" class="row"></header>

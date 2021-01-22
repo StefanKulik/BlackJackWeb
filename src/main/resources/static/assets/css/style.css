@@ -231,12 +231,22 @@ header {
   overflow: hidden;
   color: var(--color-one);
 }
-header .exit {
+header .row {
+  height: 35px;
+}
+header .logo {
+  padding: 0 0 0 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+header .button {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  padding: 0;
 }
-header .exit__button {
+header .button__exit {
   width: 35px;
   height: 35px;
   background-color: rgba(0, 0, 0, 0.1);
@@ -244,8 +254,41 @@ header .exit__button {
   border: none;
   user-select: none;
 }
-header .exit__button:hover {
-  background-color: darkred;
+header .button__exit:hover {
+  background-color: var(--color-one);
+}
+header .button__min {
+  width: 35px;
+  height: 35px;
+  background-color: rgba(0, 0, 0, 0.1);
+  outline: none;
+  border: none;
+  user-select: none;
+}
+header .button__min:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+header .button__max {
+  width: 35px;
+  height: 35px;
+  background-color: rgba(0, 0, 0, 0.1);
+  outline: none;
+  border: none;
+  user-select: none;
+}
+header .button__max:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+header .button__small {
+  width: 35px;
+  height: 35px;
+  background-color: rgba(0, 0, 0, 0.1);
+  outline: none;
+  border: none;
+  user-select: none;
+}
+header .button__small:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 header div {
   display: flex;
