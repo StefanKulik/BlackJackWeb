@@ -8,16 +8,24 @@
 
     <header th:replace="fragments/header"></header>
 
-    <menu th:replace="fragments/menu"></menu>
+    <menu>
+        <div class="offset-11 col-1" style="user-select: None;">
+            <label>
+                <span class="icon_fa" id="symbol" style="color:var(--color-one);" >&#xf186;</span>
+                <input checked id="switch" onclick="setClassToBody()" type="checkbox" >
+            </label>
+            <label class="" for="switch" id="label"></label>
+        </div>
+    </menu>
 
 
     <main th:fragment="home" id="spielfeld">
         <div class="row home">
             <div class="col-6 box__style box__style__1">
-                <button class="box__style__home"><a class="box__style__home__but" href="blackjack" >BlackJack</a></button>
+                <button class="box__style__home" ><a class="box__style__home__but" href="blackjack" >BlackJack</a></button>
             </div>
             <div class="col-6 box__style box__style__2">
-                <button class="box__style__home"><a class="box__style__home__but" href="placeholder" >Placeholder</a></button>
+                <button class="box__style__home" ><a class="box__style__home__but" href="placeholder" >Placeholder</a></button>
             </div>
         </div>
     </main>

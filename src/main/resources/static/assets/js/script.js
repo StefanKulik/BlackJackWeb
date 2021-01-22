@@ -62,6 +62,9 @@ var app = new Vue({
                 }
             });
         },
+        neueRundeZwei: function() {
+          app.displ = true;
+        },
 
         neueRunde: function(){
             $.ajax({
@@ -261,27 +264,27 @@ var app = new Vue({
                 dataType: 'json',
                 success: function (data) {
                     app.lastGame = []
-                    if(app.lastGameSize === 6) {
+                    if(app.lastGameSize >= 5) {
                         app.lastGame.push(data[0]);
                         app.lastGame.push(data[1]);
                         app.lastGame.push(data[2]);
                         app.lastGame.push(data[3]);
                         app.lastGame.push(data[4]);
-                    }else if(app.lastGameSize === 5) {
-                        app.lastGame.push(data[0]);
-                        app.lastGame.push(data[1]);
-                        app.lastGame.push(data[2]);
-                        app.lastGame.push(data[3]);
                     }else if(app.lastGameSize === 4) {
                         app.lastGame.push(data[0]);
                         app.lastGame.push(data[1]);
                         app.lastGame.push(data[2]);
+                        app.lastGame.push(data[3]);
                     }else if(app.lastGameSize === 3) {
                         app.lastGame.push(data[0]);
                         app.lastGame.push(data[1]);
+                        app.lastGame.push(data[2]);
                     }else if(app.lastGameSize === 2) {
                         app.lastGame.push(data[0]);
-                    }else {
+                        app.lastGame.push(data[1]);
+                    }else if(app.lastGameSize === 1) {
+                        app.lastGame.push(data[0]);
+                    }else{
                         app.lastGame = [];
                     }
 

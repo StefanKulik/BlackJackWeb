@@ -17,12 +17,6 @@
       padding: 0;
       box-shadow: 0 8px 6px -6px var(--main-bg-color);
 
-      //background-color: black;
-
-      &:hover {
-        background-color: var(--color-three);
-        //transform: scale(1.5);
-      }
 
       &__but {
         text-decoration: none;
@@ -34,13 +28,6 @@
         font-size: 45px;
         color: var(--color-one);
       }
-    }
-
-    &__1 {
-      //background-color: #6f42c1;
-    }
-    &__2 {
-      //background-color: #721c24;
     }
   }
 }

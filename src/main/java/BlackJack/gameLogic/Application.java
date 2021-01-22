@@ -6,6 +6,7 @@ import BlackJack.Main;
 import org.cef.CefApp;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
@@ -15,7 +16,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import java.lang.reflect.Field;
 
 
-@SpringBootApplication
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
 @ComponentScan(basePackages = {"Controller"})
 @EnableJpaRepositories(basePackages = "Database.repositories")
 @EntityScan(basePackages = {"Database.tables"})
@@ -42,7 +43,7 @@ public class Application {
                 }
 
 
-                MainWindow m = new MainWindow("http://localhost:82/", false, false);
+                //MainWindow m = new MainWindow("http://localhost:82/", false, false);
 
                 Config.getInstance().loadConfig();
                 System.out.println("gestartet!");

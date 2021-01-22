@@ -20,10 +20,10 @@ public class Main {
 
         Config.getInstance().loadConfig();
 
-        new Thread(() -> {
-            SplashScreen splash = new SplashScreen(12000);
-            splash.dispose();
-        }).start();
+//        new Thread(() -> {
+//            SplashScreen splash = new SplashScreen(12000);
+//            splash.dispose();
+//        }).start();
 
         System.setProperty("sun.java2d.uiScale", "1");
 
