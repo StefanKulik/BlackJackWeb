@@ -358,6 +358,14 @@ var app = new Vue({
                 }
             });
         },
+        minimize: function(){
+            $.ajax({
+                type: "Post",
+                url: "/minimize/",
+                success: function (data) {
+                }
+            });
+        },
     },
 });
 /*]]>*/

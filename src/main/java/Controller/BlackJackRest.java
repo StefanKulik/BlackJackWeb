@@ -1,5 +1,6 @@
 package Controller;
 
+import BlackJack.GuiWindow.MainWindow;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -7,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import BlackJack.gameLogic.Application;
 import BlackJack.Config;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 
@@ -20,7 +22,6 @@ public class BlackJackRest {
     int numberPlayer;
     int index = 2;
     int potPlayer;
-
 
     @PostMapping("setTheme")
     public String setTheme(@RequestParam(name = "theme") String theme) {
@@ -259,5 +260,10 @@ public class BlackJackRest {
         Config.getInstance().loadConfig();
         System.out.println("Nach Runde: " + Config.getInstance().getCapital());
         return Config.getInstance().getCapital();
+    }
+
+    @PostMapping("minimize")
+    public void minimize(){
+        Application.getWindow().setState(JFrame.ICONIFIED);
     }
 }

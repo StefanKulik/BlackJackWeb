@@ -239,9 +239,12 @@ header .exit {
 header .exit__button {
   width: 35px;
   height: 35px;
-  background-color: var(--color-one);
+  background-color: rgba(0, 0, 0, 0.1);
+  outline: none;
+  border: none;
+  user-select: none;
 }
-header .exit__button :hover {
+header .exit__button:hover {
   background-color: darkred;
 }
 header div {

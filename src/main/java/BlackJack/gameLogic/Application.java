@@ -23,6 +23,7 @@ import java.lang.reflect.Field;
 public class Application {
 
     public static Game spiel;
+    public static MainWindow m;
 
     public static void main(String[] args) {
         ConfigurableApplicationContext context = new SpringApplicationBuilder(Application.class)
@@ -43,7 +44,8 @@ public class Application {
                 }
 
 
-                //MainWindow m = new MainWindow("http://localhost:82/", false, false);
+                m = new MainWindow("http://localhost:82/", false, false);
+
 
                 Config.getInstance().loadConfig();
                 System.out.println("gestartet!");
@@ -59,5 +61,9 @@ public class Application {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static MainWindow getWindow(){
+        return m;
     }
 }

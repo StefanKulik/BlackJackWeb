@@ -47,7 +47,6 @@ public class MainWindow extends JFrame {
         setIconImage(img.getImage());
         setVisible(true);
 
-
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
