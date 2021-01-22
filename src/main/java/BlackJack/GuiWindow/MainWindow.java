@@ -11,8 +11,7 @@ import org.cef.handler.CefAppHandlerAdapter;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 
 import static BlackJack.Main.pathTemp;
 
@@ -20,15 +19,18 @@ public class MainWindow extends JFrame {
 
     public MainWindow(String startURL, boolean useOSR, boolean isTransparent) {
 
+
+
         CefApp.addAppHandler(new CefAppHandlerAdapter(null) {
             @Override
-            public void stateHasChanged(org.cef.CefApp.CefAppState state) {
+            public void stateHasChanged(CefAppState state) {
                 // Shutdown the app if the native CEF part is terminated
                 if (state == CefAppState.TERMINATED) System.exit(0);
             }
         });
         CefSettings settings = new CefSettings();
 
+        setUndecorated(true);
         settings.windowless_rendering_enabled = useOSR;
         settings.cache_path = pathTemp;
         CefApp cefApp_ = CefApp.getInstance(settings);
@@ -37,12 +39,14 @@ public class MainWindow extends JFrame {
         Component browserUI_ = browser_.getUIComponent();
         getContentPane().add(browserUI_, BorderLayout.CENTER);
         pack();
+        setResizable(true);
         setSize(1920, 1080);
         setExtendedState(this.getExtendedState() | JFrame.MAXIMIZED_BOTH);
         setTitle("BlackJack");
         ImageIcon img = new ImageIcon(Main.class.getResource("/inmed.png"));
         setIconImage(img.getImage());
         setVisible(true);
+
 
         addWindowListener(new WindowAdapter() {
             @Override
@@ -53,4 +57,5 @@ public class MainWindow extends JFrame {
             }
         });
     }
+
 }

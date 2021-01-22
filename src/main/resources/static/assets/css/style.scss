@@ -9,15 +9,14 @@
 
   --main-bg-color: #151515;
   --color-one: #065b0b;
-  --color-two: rgba(255, 255, 255, 0.3);
-  --color-card: #000000;
+  --color-two: rgba(0, 0, 0, 0.1);
+  --color-card: #268129;
 }
 .light {
   --main-bg-color: #065b0b;
-  //--color-one: #aeaeae;
-  --color-one: #ab4b13;
+  --color-one: #e9710e;
   --color-two: rgba(255, 255, 255, 0.1);
-  --color-card: #a5643c;
+  --color-card: #ffa556;
 }
 
 @font-face {
@@ -52,10 +51,21 @@ header {
 
   color: var(--color-one);
 
-  .result {
+
+  .exit {
     display: flex;
-    justify-content: left;
+    justify-content: flex-end;
     align-items: center;
+
+    &__button {
+      width: 35px;
+      height: 35px;
+      background-color: var(--color-one);
+
+      :hover{
+        background-color: darkred;
+      }
+    }
   }
 
   div {
@@ -63,11 +73,13 @@ header {
     justify-content: center;
     align-items: center;
 
-    h1{
-      margin: 0;
-      padding: 0;
-      font-size: 35px;
+    .message {
+      h1{
+        margin: 0;
+        padding: 0;
+        font-size: 35px;
 
+      }
     }
   }
 }

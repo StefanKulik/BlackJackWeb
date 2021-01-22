@@ -13,12 +13,12 @@ public class SplashScreen extends JWindow {
     public SplashScreen(int d) {
         duration = d;
 
-        Color background = new Color(18,18,18,255);
-        Color c = new Color(18, 52, 86, 255);
+        Color background = new Color(21,21,21,255);
+        Color c = new Color(6, 91, 11, 255);
 
         if (Config.getInstance().getTheme() == Config.Theme.LIGHT){
-            background = new Color(255,255,255,255);
-            c = new Color(173,173,173,255);
+            background = new Color(6,91,11,255);
+            c = new Color(233,113,14,255);
         }
 
         JPanel content = (JPanel) getContentPane();

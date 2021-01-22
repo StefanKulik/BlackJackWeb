@@ -60,6 +60,10 @@ public class BlackJackRest {
         Config.getInstance().setLastGames(lastFiveGames);
         Config.getInstance().saveConfig();
     }
+    @PostMapping("exit")
+    public void exit() {
+        System.exit(0);
+    }
 
     @PostMapping("stay")
     public void stay() { }

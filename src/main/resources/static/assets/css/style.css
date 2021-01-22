@@ -191,15 +191,15 @@
 :root {
   --main-bg-color: #151515;
   --color-one: #065b0b;
-  --color-two: rgba(255, 255, 255, 0.3);
-  --color-card: #000000;
+  --color-two: rgba(0, 0, 0, 0.1);
+  --color-card: #268129;
 }
 
 .light {
   --main-bg-color: #065b0b;
-  --color-one: #ab4b13;
+  --color-one: #e9710e;
   --color-two: rgba(255, 255, 255, 0.1);
-  --color-card: #a5643c;
+  --color-card: #ffa556;
 }
 
 @font-face {
@@ -231,17 +231,25 @@ header {
   overflow: hidden;
   color: var(--color-one);
 }
-header .result {
+header .exit {
   display: flex;
-  justify-content: left;
+  justify-content: flex-end;
   align-items: center;
+}
+header .exit__button {
+  width: 35px;
+  height: 35px;
+  background-color: var(--color-one);
+}
+header .exit__button :hover {
+  background-color: darkred;
 }
 header div {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-header div h1 {
+header div .message h1 {
   margin: 0;
   padding: 0;
   font-size: 35px;

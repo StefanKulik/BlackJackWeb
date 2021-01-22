@@ -349,6 +349,15 @@ var app = new Vue({
                 }
             });
         },
+
+        exit: function(){
+            $.ajax({
+                type: "Post",
+                url: "/exit/",
+                success: function (data) {
+                }
+            });
+        },
     },
 });
 /*]]>*/
