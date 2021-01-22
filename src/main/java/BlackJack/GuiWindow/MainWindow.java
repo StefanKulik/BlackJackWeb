@@ -2,6 +2,7 @@ package BlackJack.GuiWindow;
 
 import BlackJack.Config;
 import BlackJack.Main;
+import BlackJack.gameLogic.Application;
 import org.cef.CefApp;
 import org.cef.CefApp.CefAppState;
 import org.cef.CefClient;
@@ -16,6 +17,7 @@ import java.awt.event.*;
 import static BlackJack.Main.pathTemp;
 
 public class MainWindow extends JFrame {
+    static Point compCoords;
 
     public MainWindow(String startURL, boolean useOSR, boolean isTransparent) {
 
@@ -30,6 +32,8 @@ public class MainWindow extends JFrame {
         });
         CefSettings settings = new CefSettings();
 
+
+
         setUndecorated(true);
         settings.windowless_rendering_enabled = useOSR;
         settings.cache_path = pathTemp;
@@ -41,7 +45,8 @@ public class MainWindow extends JFrame {
         pack();
         setResizable(true);
         setSize(1920, 1080);
-        setExtendedState(this.getExtendedState() | JFrame.MAXIMIZED_BOTH);
+        setLocationRelativeTo(null);
+        //setExtendedState(this.getExtendedState() | JFrame.MAXIMIZED_BOTH);
         setTitle("BlackJack");
         ImageIcon img = new ImageIcon(Main.class.getResource("/inmed.png"));
         setIconImage(img.getImage());
@@ -55,6 +60,9 @@ public class MainWindow extends JFrame {
                 dispose();
             }
         });
+
+
+
     }
 
 }

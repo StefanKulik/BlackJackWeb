@@ -44,7 +44,7 @@ public class Application {
                 }
 
 
-                m = new MainWindow("http://localhost:82/", false, false);
+               // m = new MainWindow("http://localhost:82/", false, false);
 
 
                 Config.getInstance().loadConfig();

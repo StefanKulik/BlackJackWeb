@@ -14,10 +14,10 @@ public class SplashScreen extends JWindow {
         duration = d;
 
         Color background = new Color(21,21,21,255);
-        Color c = new Color(6, 91, 11, 255);
+        Color c = new Color(126, 16, 16, 255);
 
         if (Config.getInstance().getTheme() == Config.Theme.LIGHT){
-            background = new Color(6,91,11,255);
+            background = new Color(9,77,117,255);
             c = new Color(233,113,14,255);
         }
 
@@ -45,7 +45,7 @@ public class SplashScreen extends JWindow {
         label2.setForeground(c);
         content.add(label2, BorderLayout.WEST);
 
-        JLabel label3 = new JLabel("(C) S. Kulik 2020");
+        JLabel label3 = new JLabel("(C) S. Kulik 2021");
         label3.setSize(width, height / 2);
         label3.setVerticalAlignment(JLabel.BOTTOM);
         label3.setHorizontalAlignment(JLabel.CENTER);

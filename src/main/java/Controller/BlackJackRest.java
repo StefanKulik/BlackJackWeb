@@ -9,6 +9,10 @@ import BlackJack.gameLogic.Application;
 import BlackJack.Config;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
 
@@ -22,6 +26,8 @@ public class BlackJackRest {
     int numberPlayer;
     int index = 2;
     int potPlayer;
+
+
 
     @PostMapping("setTheme")
     public String setTheme(@RequestParam(name = "theme") String theme) {
@@ -262,8 +268,43 @@ public class BlackJackRest {
         return Config.getInstance().getCapital();
     }
 
+
+
     @PostMapping("minimize")
     public void minimize(){
-        Application.getWindow().setState(JFrame.ICONIFIED);
+        try
+        {
+            Application.getWindow().setExtendedState(JFrame.ICONIFIED);
+        }
+        catch(NullPointerException e)
+        {
+            System.out.println("NullPointerException caught");
+        }
+    }
+
+    @PostMapping("vergrößern")
+    public void vergroessern(){
+        try
+        {
+            Application.getWindow().setExtendedState(JFrame.MAXIMIZED_BOTH);
+        }
+        catch(NullPointerException e)
+        {
+            System.out.println("NullPointerException caught");
+        }
+
+    }
+    @PostMapping("verkleinern")
+    public void verkleinern(){
+        try
+        {
+            Application.getWindow().setSize(1200,675);
+            Application.getWindow().setLocationRelativeTo(null);
+        }
+        catch(NullPointerException e)
+        {
+            System.out.println("NullPointerException caught");
+        }
+
     }
 }

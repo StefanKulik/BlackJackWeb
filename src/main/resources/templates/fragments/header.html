@@ -1,6 +1,8 @@
 <header th:fragement="header">
     <div class="row exit" style="height: 20px">
         <button class="exit__button" @click="minimize">-</button>
+        <button class="exit__button" @click="verkleinern" v-if="!max">o</button>
+        <button class="exit__button" @click="maximize" v-if="max">O</button>
         <button class="exit__button" @click="exit">X</button>
     </div>
     <div class="row message">
