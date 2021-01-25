@@ -1,16 +1,9 @@
 <header th:fragement="header">
-    <div class="row">
-        <div class="logo col-1">
-            <img alt="test" src="assets/png/inmed.png" height="30" width="30">
-        </div>
-        <div class="button offset-10 col-1">
+    <div class="row button">
             <button class="button__min" @click="minimize">-</button>
             <button class="button__small" @click="verkleinern" v-if="!max">o</button>
             <button class="button__max" @click="maximize" v-if="max">O</button>
             <button class="button__exit" @click="exit">X</button>
-        </div>
-
-
     </div>
     <div class="row message">
         <div class="offset-6 col-2" id="message">

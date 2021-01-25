@@ -16,7 +16,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import java.lang.reflect.Field;
 
 
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
+@SpringBootApplication
 @ComponentScan(basePackages = {"Controller"})
 @EnableJpaRepositories(basePackages = "Database.repositories")
 @EntityScan(basePackages = {"Database.tables"})
@@ -44,7 +44,7 @@ public class Application {
                 }
 
 
-               // m = new MainWindow("http://localhost:82/", false, false);
+                m = new MainWindow("http://localhost:82/", false, false);
 
 
                 Config.getInstance().loadConfig();

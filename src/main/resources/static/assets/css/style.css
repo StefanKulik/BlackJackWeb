@@ -234,12 +234,6 @@ header {
 header .row {
   height: 35px;
 }
-header .logo {
-  padding: 0 0 0 5px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
 header .button {
   display: flex;
   justify-content: flex-end;

@@ -385,14 +385,7 @@ var app = new Vue({
                 }
             });
         },
-        dragDrop: function(){
-            $.ajax({
-                type: "Post",
-                url: "/dragDrop/",
-                success: function (data) {
-                }
-            });
-        },
+
     },
 });
 /*]]>*/

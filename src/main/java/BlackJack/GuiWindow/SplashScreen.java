@@ -18,7 +18,7 @@ public class SplashScreen extends JWindow {
 
         if (Config.getInstance().getTheme() == Config.Theme.LIGHT){
             background = new Color(9,77,117,255);
-            c = new Color(233,113,14,255);
+            c = new Color(255,215,0,255);
         }
 
         JPanel content = (JPanel) getContentPane();
