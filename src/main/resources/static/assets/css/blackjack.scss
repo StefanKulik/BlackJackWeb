@@ -1,0 +1,198 @@
+.blackjack {
+  height: 100%;
+
+  .spielflaeche {
+    .row {
+      height: calc((100vh - 191px) / 3);
+    }
+  }
+
+  .ergebnis {
+    display: inline-grid;
+    justify-content: center;
+    align-items: center;
+
+    .all {
+      .box-style {
+        width: 350px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  .result {
+    display: inline-flex;
+  }
+
+  #spielerAuflistung {
+    .box-style {
+      height: calc((100vh - 480px) / 2);
+
+      td {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .table {
+      pointer-events: none;
+      margin: 5px;
+      font-size: 15px;
+      max-height: calc((100vh - 275px) / 2);
+    }
+
+    .karteSpieler {
+      background-color: var(--color-card);
+      color: var(--color-one);
+      width: 100px;
+      height: 140px;
+      border-radius: 15px;
+      font-size: 81px;
+      text-align: center;
+    }
+  }
+
+  #spielerWert {
+    max-height:calc((100vh - 191px)/3);
+
+    .box-style {
+      width: 100%;
+    }
+  }
+
+
+  #croupierAuflistung {
+    .box-style {
+      height: calc((100vh - 480px) / 2);
+
+      td {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .table {
+      pointer-events: none;
+      margin: 5px;
+      font-size: 15px;
+      max-height: calc((100vh - 275px) / 2);
+    }
+
+    .karteDealer {
+      background-color: var(--color-card);
+      color: var(--color-one);
+      width: 100px;
+      height: 140px;
+      border-radius: 15px;
+      font-size: 81px;
+      text-align: center;
+    }
+  }
+
+  #croupierWert {
+    max-height: calc((100vh - 191px) / 3);
+    .box-style {
+      width: 100%;
+    }
+  }
+
+
+  #anzeige {
+    height: 99px;
+  }
+
+  .table {
+    margin: 0;
+    color: var(--color-one);
+
+    td, th {
+      border-top: none;
+    }
+  }
+
+  .all {
+    display: flex;
+    justify-content: start;
+  }
+
+  .box-style {
+   //background-color: var(--color-two);
+    margin: 10px;
+    width: auto;
+    border-radius: 10px;
+  }
+
+
+  .wrapper {
+
+    padding: 0;
+    margin: 0;
+
+
+    .pot {
+      display: flow-root;
+      justify-content: center;
+      align-items: center;
+
+      &__buttons {
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__but {
+          height: 65px;
+          width: 80px;
+          color: var(--color-one);
+          display: flex;
+          margin: 2px;
+          justify-content: center;
+          align-items: center;
+          background-color: var(--color-two);
+          border: none;
+          outline: none;
+          border-radius: 5px;
+        }
+      }
+      .row {
+        height: calc(((100vh - 191px) / 5)/2);
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+    }
+
+    .row {
+      height: calc((100vh - 191px) / 5);
+
+      .error_msg {
+        font-size: 30px;
+      }
+    }
+
+    &__inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &__button {
+        height: 80px;
+        width: 120px;
+        color: var(--color-one);
+        display: flex;
+        margin: 10px;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-two);
+        border: none;
+        outline: none;
+        border-radius: 5px;
+
+      }
+    }
+  }
+}

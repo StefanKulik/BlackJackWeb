@@ -30,6 +30,10 @@ var app = new Vue({
         pot: 0,
         capital: 0,
 
+        X: 0,
+        Y: 0,
+
+
         message: new Date().toLocaleDateString(),
     },
     methods: {
@@ -57,14 +61,27 @@ var app = new Vue({
                 data: null,
                 dataType: 'json',
                 success: function (data) {
-                    app.kartenSpieler.push(data[app.index]);
+                    app.kartenSpieler = data;
+                    // app.kartenSpieler.push(data[app.index]);
                     app.index++;
                     app.spielerWert();
                 }
             });
         },
+
         neueRundeZwei: function() {
-          app.displ = true;
+            app.displ = true;
+            app.kartenSpieler = [];
+            app.wertSpieler = null;
+
+            app.kartenDealer = [];
+            app.wertDealer = null;
+            app.lastGamesSize();
+
+
+
+
+
         },
 
         neueRunde: function(){
@@ -72,21 +89,12 @@ var app = new Vue({
                 type: "Post",
                 url: "/newRound/",
                 success: function () {
-
-                    app.kartenSpieler = [];
-                    app.wertSpieler = null;
                     app.spielerKarten();
-
-                    app.kartenDealer = [];
-                    app.wertDealer = null;
                     app.dealerAnfangsKarten();
-
-                    app.lastGamesSize();
-
-                    app.ergebnis = "";
 
                     app.index = 2;
                     app.games++;
+                    app.ergebnis = "";
 
                     app.displ = true;
                 }
@@ -144,8 +152,8 @@ var app = new Vue({
                 dataType: 'json',
                 success: function (data) {
 
-                    app.kartenSpieler.push(data[0]);
-                    app.kartenSpieler.push(data[1]);
+                    app.kartenSpieler = data;
+                    // app.kartenSpieler.push(data[1]);
                     app.spielerWert();
                 }
             });
@@ -164,7 +172,7 @@ var app = new Vue({
                     app.kartenDealer.push(data[0]);
                     app.kartenDealer.push("");
 
-                    switch(data[0]){
+                    switch(data[0].picture){
                         case "A":
                             app.wertDealer = 11;
                             break;
@@ -238,18 +246,23 @@ var app = new Vue({
                 data: null,
                 dataType: 'json',
                 success: function (data) {
-                    if( data === "W") {
-                        app.ergebnis = "WIN";
-                    }else if( data === "L") {
-                        app.ergebnis = "LOSE";
-                    }else if( data === "P") {
-                        app.ergebnis = "PUSH";
-                    }else if( data === "B") {
-                        app.ergebnis = "BUST";
-                    }else if( data === "21"){
-                        app.ergebnis = "BLACKJACk";
+                    switch (data) {
+                        case "W":
+                            app.ergebnis = "WIN";
+                            break;
+                        case "L":
+                            app.ergebnis = "LOSE";
+                            break;
+                        case "P":
+                            app.ergebnis = "PUSH";
+                            break;
+                        case "B":
+                            app.ergebnis = "BUST";
+                            break;
+                        case "21":
+                            app.ergebnis = "BLACKJACk";
+                            break;
                     }
-
                     app.calculateCapital();
                     app.letzen5Spiele();
                 }
@@ -292,6 +305,7 @@ var app = new Vue({
                 }
             });
         },
+
         lastGamesSize: function(){
             $.ajax({
                 type: "Post",

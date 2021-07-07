@@ -1,6 +1,6 @@
-@import 'Blackjack/blackjack';
-@import 'Home/home';
-@import 'Placeholder/placeholder';
+@import 'blackjack';
+@import 'home';
+@import 'placeholder';
 
 :root {
   //--main-bg-color: #151515;
@@ -16,14 +16,14 @@
   --main-bg-color: #094d75;
   --color-one: #ffd700;
   --color-two: rgba(255, 255, 255, 0.1);
-  --color-card: #efda6f;
+  --color-card: #f1dd81;
 }
 
 @font-face {
   font-family: 'FontAwesome';
   font-style: normal;
   font-weight: 900;
-  src: url("/assets/fonts/fontawesome-webfont.ttf") format("truetype");
+  src: url("static/assets/fonts/fontawesome-webfont.ttf") format("truetype");
 }
 
 body {
@@ -217,7 +217,7 @@ menu {
 
 
     .icon_fa{
-      font-family:FontAwesome;
+      font-family: FontAwesome, serif;
       font-size: 30px;
       cursor: pointer;
       display: flex;

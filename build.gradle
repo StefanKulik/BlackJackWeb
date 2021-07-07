@@ -30,6 +30,8 @@ dependencies {
     compile fileTree(dir: 'jars', include: ['*.jar'])
     compile fileTree(dir: 'jcef/jar', include: ['*.jar'])
 
+
+
     // https://mvnrepository.com/artifact/junit/junit
     testCompile group: 'junit', name: 'junit', version: '4.13'
 
@@ -37,9 +39,12 @@ dependencies {
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.8'
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.8'
+    
+    // https://mvnrepository.com/artifact/com.h2database/h2
+    runtimeOnly group: 'com.h2database', name: 'h2', version: '1.4.200'
 
-
-
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
 
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'

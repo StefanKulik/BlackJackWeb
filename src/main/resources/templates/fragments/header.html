@@ -1,4 +1,4 @@
-<header th:fragement="header">
+<header th:fragement="header" onmousedown="X=clientX; Y=clientY" onmouseup="submitcords">
     <div class="row button">
             <button class="button__min" @click="minimize">-</button>
             <button class="button__small" @click="verkleinern" v-if="!max">o</button>

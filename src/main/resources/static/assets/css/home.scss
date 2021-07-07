@@ -1,0 +1,38 @@
+.home {
+  height: 100%;
+
+  .box__style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 0;
+    padding: 0;
+
+    &__home {
+      background-color: var(--color-two);
+      border: none;
+      border-radius: 10px;
+      margin: 0;
+      padding: 0;
+      box-shadow: 0 8px 6px -6px var(--main-bg-color);
+
+
+      &__but {
+        text-decoration: none;
+        width: 300px;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 45px;
+        color: var(--color-one);
+      }
+    }
+  }
+}
+
+
+
+
+
