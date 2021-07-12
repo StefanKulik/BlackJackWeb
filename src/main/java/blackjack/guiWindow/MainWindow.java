@@ -18,7 +18,6 @@ import static blackjack.application.Application.pathTemp;
 
 
 public class MainWindow extends JFrame {
-//    static Point compCoords;
 
     public MainWindow(String startURL, boolean useOSR, boolean isTransparent) {
 
@@ -31,39 +30,6 @@ public class MainWindow extends JFrame {
             }
         });
         CefSettings settings = new CefSettings();
-
-
-//        compCoords = null;
-//        content.addMouseListener(new MouseListener() {
-//            public void mouseReleased(MouseEvent e) {
-//                compCoords = null;
-//            }
-//
-//            public void mousePressed(MouseEvent e) {
-//                compCoords = e.getPoint();
-//            }
-//
-//            public void mouseExited(MouseEvent e) {
-//            }
-//
-//            public void mouseEntered(MouseEvent e) {
-//            }
-//
-//            public void mouseClicked(MouseEvent e) {
-//            }
-//        });
-//        content.addMouseMotionListener(new MouseMotionListener() {
-//            public void mouseMoved(MouseEvent e) {
-//            }
-//
-//            public void mouseDragged(MouseEvent e) {
-//                Point currCoords = e.getLocationOnScreen();
-//                getContentPane().setLocation(currCoords.x - compCoords.x, currCoords.y - compCoords.y);
-//            }
-//        });
-
-
-
 
         setUndecorated(true);
         settings.windowless_rendering_enabled = useOSR;

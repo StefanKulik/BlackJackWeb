@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .blackjack {
   height: 100%;
 }
@@ -186,6 +187,199 @@
 
 .placeholder {
   height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.placeholder__tanzflaeche {
+  min-height: 800px;
+  min-width: 800px;
+  background-image: url("../png/tanzflaeche.jpg");
+  background-repeat: no-repeat;
+}
+.placeholder__tanzflaeche .x__0 {
+  top: 403px;
+}
+.placeholder__tanzflaeche .x__m__0-5 {
+  top: 378px;
+}
+.placeholder__tanzflaeche .x__m__1 {
+  top: 353px;
+}
+.placeholder__tanzflaeche .x__m__1-5 {
+  top: 328px;
+}
+.placeholder__tanzflaeche .x__m__2 {
+  top: 303px;
+}
+.placeholder__tanzflaeche .x__m__2-5 {
+  top: 278px;
+}
+.placeholder__tanzflaeche .x__m__3 {
+  top: 253px;
+}
+.placeholder__tanzflaeche .x__m__3-5 {
+  top: 228px;
+}
+.placeholder__tanzflaeche .x__m__4 {
+  top: 203px;
+}
+.placeholder__tanzflaeche .x__m__4-5 {
+  top: 178px;
+}
+.placeholder__tanzflaeche .x__m__5 {
+  top: 153px;
+}
+.placeholder__tanzflaeche .x__m__5-5 {
+  top: 128px;
+}
+.placeholder__tanzflaeche .x__m__6 {
+  top: 103px;
+}
+.placeholder__tanzflaeche .x__m__6-5 {
+  top: 78px;
+}
+.placeholder__tanzflaeche .x__m__7 {
+  top: 53px;
+}
+.placeholder__tanzflaeche .x__p__0-5 {
+  top: 428px;
+}
+.placeholder__tanzflaeche .x__p__1 {
+  top: 453px;
+}
+.placeholder__tanzflaeche .x__p__1-5 {
+  top: 478px;
+}
+.placeholder__tanzflaeche .x__p__2 {
+  top: 503px;
+}
+.placeholder__tanzflaeche .x__p__2-5 {
+  top: 528px;
+}
+.placeholder__tanzflaeche .x__p__3 {
+  top: 553px;
+}
+.placeholder__tanzflaeche .x__p__3-5 {
+  top: 578px;
+}
+.placeholder__tanzflaeche .x__p__4 {
+  top: 603px;
+}
+.placeholder__tanzflaeche .x__p__4-5 {
+  top: 628px;
+}
+.placeholder__tanzflaeche .x__p__5 {
+  top: 653px;
+}
+.placeholder__tanzflaeche .x__p__5-5 {
+  top: 678px;
+}
+.placeholder__tanzflaeche .x__p__6 {
+  top: 703px;
+}
+.placeholder__tanzflaeche .x__p__6-5 {
+  top: 728px;
+}
+.placeholder__tanzflaeche .x__p__7 {
+  top: 753px;
+}
+.placeholder__tanzflaeche .y__0 {
+  left: 398px;
+}
+.placeholder__tanzflaeche .y__m__0-5 {
+  left: 423px;
+}
+.placeholder__tanzflaeche .y__m__1 {
+  left: 448px;
+}
+.placeholder__tanzflaeche .y__m__1-5 {
+  left: 473px;
+}
+.placeholder__tanzflaeche .y__m__2 {
+  left: 498px;
+}
+.placeholder__tanzflaeche .y__m__2-5 {
+  left: 523px;
+}
+.placeholder__tanzflaeche .y__m__3 {
+  left: 548px;
+}
+.placeholder__tanzflaeche .y__m__3-5 {
+  left: 573px;
+}
+.placeholder__tanzflaeche .y__m__4 {
+  left: 598px;
+}
+.placeholder__tanzflaeche .y__m__4-5 {
+  left: 623px;
+}
+.placeholder__tanzflaeche .y__m__5 {
+  left: 648px;
+}
+.placeholder__tanzflaeche .y__m__5-5 {
+  left: 673px;
+}
+.placeholder__tanzflaeche .y__m__6 {
+  left: 698px;
+}
+.placeholder__tanzflaeche .y__m__6-5 {
+  left: 723px;
+}
+.placeholder__tanzflaeche .y__m__7 {
+  left: 748px;
+}
+.placeholder__tanzflaeche .y__p__0-5 {
+  left: 373px;
+}
+.placeholder__tanzflaeche .y__p__1 {
+  left: 348px;
+}
+.placeholder__tanzflaeche .y__p__1-5 {
+  left: 323px;
+}
+.placeholder__tanzflaeche .y__p__2 {
+  left: 298px;
+}
+.placeholder__tanzflaeche .y__p__2-5 {
+  left: 273px;
+}
+.placeholder__tanzflaeche .y__p__3 {
+  left: 248px;
+}
+.placeholder__tanzflaeche .y__p__3-5 {
+  left: 223px;
+}
+.placeholder__tanzflaeche .y__p__4 {
+  left: 198px;
+}
+.placeholder__tanzflaeche .y__p__4-5 {
+  left: 173px;
+}
+.placeholder__tanzflaeche .y__p__5 {
+  left: 148px;
+}
+.placeholder__tanzflaeche .y__p__5-5 {
+  left: 123px;
+}
+.placeholder__tanzflaeche .y__p__6 {
+  left: 98px;
+}
+.placeholder__tanzflaeche .y__p__6-5 {
+  left: 73px;
+}
+.placeholder__tanzflaeche .y__p__7 {
+  left: 48px;
+}
+.placeholder__tanzflaeche .common {
+  height: 5px;
+  width: 5px;
+  margin-top: -5px;
+  position: relative;
+  background-color: black;
+}
+.placeholder__tanzflaeche .null, .placeholder__tanzflaeche .eins, .placeholder__tanzflaeche .zwei, .placeholder__tanzflaeche .drei, .placeholder__tanzflaeche .vier, .placeholder__tanzflaeche .fünf, .placeholder__tanzflaeche .sechs, .placeholder__tanzflaeche .sieben {
+  height: 5px;
+  width: 800px;
 }
 
 :root {
@@ -206,10 +400,9 @@
   font-family: "FontAwesome";
   font-style: normal;
   font-weight: 900;
-  src: url("/assets/fonts/fontawesome-webfont.ttf") format("truetype");
+  src: url("static/assets/fonts/fontawesome-webfont.ttf") format("truetype");
 }
 body {
-  background-color: var(--main-bg-color);
   color: var(--color-one);
   padding: 0;
   margin: 0;
@@ -377,7 +570,7 @@ menu label {
   align-items: center;
 }
 menu label .icon_fa {
-  font-family: FontAwesome;
+  font-family: FontAwesome, serif;
   font-size: 30px;
   cursor: pointer;
   display: flex;

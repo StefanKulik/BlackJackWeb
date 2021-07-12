@@ -1,3 +1,212 @@
 .placeholder {
     height: 100%;
+    align-items: center;
+    justify-content: center;
+
+    &__tanzflaeche {
+        min-height: 800px;
+        min-width: 800px;
+        background-image: url("../png/tanzflaeche.jpg");
+        background-repeat: no-repeat;
+
+        .x {
+            &__0 {
+                top: 403px;
+            }
+            &__m {
+                &__0-5 {
+                    top: 378px;
+                }
+                &__1 {
+                    top: 353px;
+                }
+                &__1-5 {
+                    top: 328px;
+                }
+                &__2 {
+                    top: 303px;
+                }
+                &__2-5 {
+                    top: 278px;
+                }
+                &__3 {
+                    top: 253px;
+                }
+                &__3-5 {
+                    top: 228px;
+                }
+                &__4 {
+                    top: 203px;
+                }
+                &__4-5 {
+                    top: 178px;
+                }
+                &__5 {
+                    top: 153px;
+                }
+                &__5-5 {
+                    top: 128px;
+                }
+                &__6 {
+                    top: 103px;
+                }
+                &__6-5 {
+                    top: 78px;
+                }
+                &__7 {
+                    top: 53px;
+                }
+            }
+            &__p {
+                &__0-5 {
+                    top: 428px;
+                }
+                &__1 {
+                    top: 453px;
+                }
+                &__1-5 {
+                    top: 478px;
+                }
+                &__2 {
+                    top: 503px;
+                }
+                &__2-5 {
+                     top: 528px;
+                 }
+                &__3 {
+                    top: 553px;
+                }
+                &__3-5 {
+                    top: 578px;
+                }
+                &__4 {
+                    top: 603px;
+                }
+                &__4-5 {
+                    top: 628px;
+                }
+                &__5 {
+                    top: 653px;
+                }
+                &__5-5 {
+                    top: 678px;
+                }
+                &__6 {
+                    top: 703px;
+                }
+                &__6-5 {
+                    top: 728px;
+                }
+                &__7 {
+                    top: 753px;
+                }
+            }
+        }
+        .y {
+            &__0 {
+                left: 398px;
+            }
+            &__m {
+                &__0-5{
+                    left: 423px;
+                }
+                &__1 {
+                    left: 448px;
+                }
+                &__1-5{
+                    left: 473px;
+                }
+                &__2 {
+                    left: 498px;
+                }
+                &__2-5{
+                    left: 523px;
+                }
+                &__3 {
+                    left: 548px;
+                }
+                &__3-5{
+                    left: 573px;
+                }
+                &__4 {
+                    left: 598px;
+                }
+                &__4-5{
+                    left: 623px;
+                }
+                &__5 {
+                    left: 648px;
+                }
+                &__5-5{
+                    left: 673px;
+                }
+                &__6 {
+                    left: 698px;
+                }
+                &__6-5{
+                    left: 723px;
+                }
+                &__7 {
+                    left: 748px;
+                }
+            }
+            &__p {
+                &__0-5{
+                    left: 373px;
+                }
+                &__1 {
+                    left: 348px;
+                }
+                &__1-5{
+                     left: 323px;
+                 }
+                &__2 {
+                    left: 298px;
+                }
+                &__2-5{
+                    left: 273px;
+                }
+                &__3 {
+                    left: 248px;
+                }
+                &__3-5{
+                    left: 223px;
+                }
+                &__4 {
+                    left: 198px;
+                }
+                &__4-5{
+                    left: 173px;
+                }
+                &__5 {
+                    left: 148px;
+                }
+                &__5-5{
+                     left: 123px;
+                 }
+                &__6 {
+                    left: 98px;
+                }
+                &__6-5{
+                left: 73px;
+            }
+                &__7 {
+                    left: 48px;
+                }
+            }
+        }
+
+        .common {
+            height: 5px;
+            width: 5px;
+            margin-top: -5px;
+            position: relative;
+            background-color: black
+        }
+        .null, .eins, .zwei, .drei, .vier, .fünf, .sechs, .sieben{
+            height: 5px;
+            width: 800px;
+        }
+
+    }
 }

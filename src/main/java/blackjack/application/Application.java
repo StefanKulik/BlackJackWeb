@@ -2,6 +2,7 @@ package blackjack.application;
 
 import blackjack.guiWindow.MainWindow;
 import blackjack.gameLogic.Game;
+import blackjack.guiWindow.SplashScreen;
 import org.cef.CefApp;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -12,7 +13,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
 import java.lang.reflect.Field;
-import java.util.Objects;
 
 
 @SpringBootApplication
@@ -30,8 +30,8 @@ public class Application {
 
     public static void main(String[] args) {
 
-        if (Objects.requireNonNull(Application.class.getResource("Application.class")).toString().startsWith("jar:")
-                || Objects.requireNonNull(Application.class.getResource("Application.class")).toString().startsWith("rsrc:")) {
+        if (Application.class.getResource("Application.class").toString().startsWith("jar:")
+                || Application.class.getResource("Application.class").toString().startsWith("rsrc:")) {
             development = false;
         }
 
