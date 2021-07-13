@@ -201,7 +201,21 @@
             width: 5px;
             margin-top: -5px;
             position: relative;
-            background-color: black
+            background-color: black;
+        }
+        .herr {
+            height: 5px;
+            width: 5px;
+            margin-top: -5px;
+            position: relative;
+            background-color: blue;
+        }
+        .dame {
+            height: 5px;
+            width: 5px;
+            margin-top: -5px;
+            position: relative;
+            background-color: red;
         }
         .null, .eins, .zwei, .drei, .vier, .fünf, .sechs, .sieben{
             height: 5px;

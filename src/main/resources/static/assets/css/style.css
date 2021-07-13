@@ -377,6 +377,20 @@
   position: relative;
   background-color: black;
 }
+.placeholder__tanzflaeche .herr {
+  height: 5px;
+  width: 5px;
+  margin-top: -5px;
+  position: relative;
+  background-color: blue;
+}
+.placeholder__tanzflaeche .dame {
+  height: 5px;
+  width: 5px;
+  margin-top: -5px;
+  position: relative;
+  background-color: red;
+}
 .placeholder__tanzflaeche .null, .placeholder__tanzflaeche .eins, .placeholder__tanzflaeche .zwei, .placeholder__tanzflaeche .drei, .placeholder__tanzflaeche .vier, .placeholder__tanzflaeche .fünf, .placeholder__tanzflaeche .sechs, .placeholder__tanzflaeche .sieben {
   height: 5px;
   width: 800px;
